@@ -125,3 +125,6 @@ public class comm : MonoBehaviour
 }
 
 con este logré hacer que el cubo cambiase de color al enviarle un mensaje a través de Hercules Terminal, sigo investigando la manera de enviar estos mensajes a través del celular.
+
+![CuboRojo](Cubo rojo.PNG)
+![CuboRojo](cubo negro.PNG)

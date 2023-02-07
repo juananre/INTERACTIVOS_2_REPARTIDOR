@@ -246,8 +246,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11c5994e5151816469f45bd2dfbeaa07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ip: 192.168.0.1
-  receivePort: 32002
+  ip: 127.0.0.1
+  receivePort: 64
   cube: {fileID: 1083107970}
 --- !u!4 &861524527
 Transform:

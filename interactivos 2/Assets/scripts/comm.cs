@@ -50,7 +50,10 @@ public class comm : MonoBehaviour
             {
                 byte[] data = receiveClient.Receive(ref receiveEndPoint);
                 string text = Encoding.UTF8.GetString(data);
-                SerializeMessage(text);
+                zigSimData zigSimdata = zigSimData.CreateFromJSON(text);
+                Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
+
+                //SerializeMessage(text);
             }
             catch (System.Exception ex)
             {

@@ -13,7 +13,7 @@ public class comm : MonoBehaviour
     private Thread receiveThread;
     private UdpClient receiveClient;
     private IPEndPoint receiveEndPoint;
-    public string ip = "0";
+    public string ip = "127.0.0.1";
     public int receivePort = 32002;
     private bool isInitialized;
     private Queue receiveQueue;

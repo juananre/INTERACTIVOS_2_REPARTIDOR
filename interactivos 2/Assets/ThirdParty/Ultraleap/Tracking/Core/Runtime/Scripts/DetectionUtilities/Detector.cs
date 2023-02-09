@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) Ultraleap, Inc. 2011-2023.                                   *
+ * Copyright (C) Ultraleap, Inc. 2011-2022.                                   *
  *                                                                            *
  * Use subject to the terms of the Apache License 2.0 available at            *
  * http://www.apache.org/licenses/LICENSE-2.0, or another agreement           *
@@ -58,7 +58,7 @@ namespace Leap.Unity
             if (!IsActive)
             {
                 _isActive = true;
-                if (OnActivate != null) OnActivate.Invoke();
+                OnActivate.Invoke();
             }
         }
 
@@ -72,7 +72,7 @@ namespace Leap.Unity
             if (IsActive)
             {
                 _isActive = false;
-                if (OnDeactivate != null) OnDeactivate.Invoke();
+                OnDeactivate.Invoke();
             }
         }
 

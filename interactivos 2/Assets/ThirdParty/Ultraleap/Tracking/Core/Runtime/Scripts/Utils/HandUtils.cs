@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) Ultraleap, Inc. 2011-2023.                                   *
+ * Copyright (C) Ultraleap, Inc. 2011-2022.                                   *
  *                                                                            *
  * Use subject to the terms of the Apache License 2.0 available at            *
  * http://www.apache.org/licenses/LICENSE-2.0, or another agreement           *
@@ -35,25 +35,15 @@ namespace Leap.Unity
 
         private static void InitStatic()
         {
-            // Fall through to the best available Leap Provider if none is assigned
+            s_provider = Object.FindObjectOfType<LeapServiceProvider>();
             if (s_provider == null)
             {
-                s_provider = Object.FindObjectOfType<PostProcessProvider>();
+                s_provider = Object.FindObjectOfType<LeapProvider>();
                 if (s_provider == null)
                 {
-                    s_provider = Object.FindObjectOfType<XRLeapProviderManager>();
-                    if (s_provider == null)
-                    {
-                        s_provider = Object.FindObjectOfType<LeapProvider>();
-                        if (s_provider == null)
-                        {
-                            Debug.Log("There are no Leap Providers in the scene, please assign one manually");
-                            return;
-                        }
-                    }
+                    return;
                 }
             }
-            Debug.Log("LeapProvider was not assigned. Auto assigning: " + s_provider);
 
             Camera providerCamera = s_provider.GetComponentInParent<Camera>();
             if (providerCamera == null) return;
@@ -387,14 +377,6 @@ namespace Leap.Unity
             }
 
             return Vector3.Dot(hand.Fingers[finger].Direction, -hand.DistalAxis()).Map(-1, 1, 0, 1);
-        }
-
-        /// <summary>
-        /// Returns the Chirality of the hand
-        /// </summary>
-        public static Chirality GetChirality(this Hand hand)
-        {
-            return hand.IsLeft ? Chirality.Left : Chirality.Right;
         }
 
         /// <summary>

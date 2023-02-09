@@ -14,7 +14,7 @@ public class comm : MonoBehaviour
     private UdpClient receiveClient;
     private IPEndPoint receiveEndPoint;
     public string ip = "127.0.0.1";
-    public int receivePort = 32002;
+    public int receivePort = 64;
     private bool isInitialized;
     private Queue receiveQueue;
     public GameObject cube;

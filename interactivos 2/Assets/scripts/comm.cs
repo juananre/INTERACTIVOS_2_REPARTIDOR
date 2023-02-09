@@ -52,8 +52,8 @@ public class comm : MonoBehaviour
                 string text = Encoding.UTF8.GetString(data);
                 zigSimData zigSimdata = zigSimData.CreateFromJSON(text);
                 Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
-
-                //SerializeMessage(text);
+                double[] coordenadas = new double[3] { zigSimdata.sensordata.gyro.x, zigSimdata.sensordata.gyro.y, zigSimdata.sensordata.gyro.z };
+                SerializeMessage(coordenadas);
             }
             catch (System.Exception ex)
             {
@@ -62,17 +62,24 @@ public class comm : MonoBehaviour
         }
     }
 
-    private void SerializeMessage(string message)
+    private void SerializeMessage(double[] menssage)
     {
         try
         {
-            string[] chain = message.Split(' ');
-            string key = chain[0];
             float value = 0;
-            if (float.TryParse(chain[1], out value))
-            {
-                receiveQueue.Enqueue(value);
-            }
+            receiveQueue.Enqueue(value);
+
+
+
+            /*
+             string[] chain = message.Split(' ');
+             string key = chain[0];
+             float value = 0;
+             if (float.TryParse(chain[1], out value))
+             {
+                 receiveQueue.Enqueue(value);
+             }
+            */
         }
         catch (System.Exception e)
         {
@@ -107,10 +114,10 @@ public class comm : MonoBehaviour
     {
         if (receiveQueue.Count != 0)
         {
-            float counter = (float)receiveQueue.Dequeue();
+            double coordenadas = (double)receiveQueue.Dequeue();
+            if (coordenadas == 1 ) m_Material.color = Color.black;
+            if (coordenadas == 2) m_Material.color = Color.red;
 
-            if (counter == 1F) m_Material.color = Color.black;
-            if (counter == 2F) m_Material.color = Color.red;
         }
 
     }

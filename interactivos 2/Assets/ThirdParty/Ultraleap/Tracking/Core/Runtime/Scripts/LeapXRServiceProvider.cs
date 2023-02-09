@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) Ultraleap, Inc. 2011-2023.                                   *
+ * Copyright (C) Ultraleap, Inc. 2011-2022.                                   *
  *                                                                            *
  * Use subject to the terms of the Apache License 2.0 available at            *
  * http://www.apache.org/licenses/LICENSE-2.0, or another agreement           *
@@ -505,7 +505,7 @@ namespace Leap.Unity
             return _leapController.Now()
                     - (long)_smoothedTrackingLatency.value
                     + ((updateHandInPrecull && !endOfFrame) ?
-                        (long)(Time.smoothDeltaTime * S_TO_US / Time.timeScale)
+                        (long)(Time.smoothDeltaTime * S_TO_NS / Time.timeScale)
                         : 0);
 #endif
         }
@@ -610,16 +610,14 @@ namespace Leap.Unity
             {
                 leapTransform = new LeapTransform(
                   mainCamera.transform.parent.TransformPoint(warpedPosition),
-                  mainCamera.transform.parent.TransformRotation(warpedRotation),
-                  mainCamera.transform.parent.lossyScale
+                  mainCamera.transform.parent.TransformRotation(warpedRotation)
                   );
             }
             else
             {
                 leapTransform = new LeapTransform(
                   warpedPosition,
-                  warpedRotation,
-                  transform.lossyScale
+                  warpedRotation
                   );
             }
 

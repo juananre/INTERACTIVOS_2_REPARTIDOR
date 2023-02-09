@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) Ultraleap, Inc. 2011-2023.                                   *
+ * Copyright (C) Ultraleap, Inc. 2011-2022.                                   *
  *                                                                            *
  * Use subject to the terms of the Apache License 2.0 available at            *
  * http://www.apache.org/licenses/LICENSE-2.0, or another agreement           *
@@ -30,21 +30,15 @@ namespace Leap.Unity
     {
         #region Constants
 
-        [Obsolete("This const is named incorrectly. Use US_TO_S instead.")]
+        /// <summary>
+        /// Converts nanoseconds to seconds.
+        /// </summary>
         protected const double NS_TO_S = 1e-6;
 
-        [Obsolete("This const is named incorrectly. Use S_TO_US instead.")]
+        /// <summary>
+        /// Converts seconds to nanoseconds.
+        /// </summary>
         protected const double S_TO_NS = 1e6;
-
-        /// <summary>
-        /// Converts Microseconds to seconds.
-        /// </summary>
-        protected const double US_TO_S = 1e-6;
-
-        /// <summary>
-        /// Converts seconds to Microseconds.
-        /// </summary>
-        protected const double S_TO_US = 1e6;
 
         /// <summary>
         /// The transform array used for late-latching.
@@ -273,23 +267,20 @@ namespace Leap.Unity
         [EditTimeOnly]
         protected string _serverNameSpace = "Leap Service";
 
-        public override TrackingSource TrackingDataSource { get { return CheckLeapServiceAvailable(); } }
-
-        /// <summary>
-        /// Determines if the service provider should temporally resample frames for smoothness.
-        /// </summary>
-        [SerializeField]
-        public bool _useInterpolation = true;
-
         #endregion
 
         #region Internal Settings & Memory
 
+        /// <summary>
+        /// Determines if the service provider should temporally resample frames for smoothness.
+        /// </summary>
+        protected bool _useInterpolation = true;
+
         // Extrapolate on Android to compensate for the latency introduced by its graphics
         // pipeline.
 #if UNITY_ANDROID && !UNITY_EDITOR
-        protected int ExtrapolationAmount = 0; // 15;
-        protected int BounceAmount = 70;
+    protected int ExtrapolationAmount = 0; // 15;
+    protected int BounceAmount = 70;
 #else
         protected int ExtrapolationAmount = 0;
         protected int BounceAmount = 0;
@@ -523,26 +514,78 @@ namespace Leap.Unity
         #region Android Support
 
 #if UNITY_ANDROID
+        private AndroidJavaObject _serviceBinder;
+        AndroidJavaClass unityPlayer;
+        AndroidJavaObject activity;
+        AndroidJavaObject context;
+        ServiceCallbacks serviceCallbacks;
 
         protected virtual void OnEnable()
         {
-#if !UNITY_EDITOR
-            AndroidServiceBinder.Bind();
+            EnsureAndroidBinding();
+        }
+
+        private bool EnsureAndroidBinding()
+        {
+#if UNITY_EDITOR
+            return false;
+#else
+            bool success;
+            try
+            {
+                bool isServiceBound = _serviceBinder?.Call<bool>("isBound") ?? false;
+                if (isServiceBound) return true; // Already bound
+
+                _serviceBinder = null;
+
+                //Get activity and context
+                if (unityPlayer == null)
+                {
+                    Debug.Log("CreateAndroidBinding - Getting activity and context");
+                    unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer");
+                    activity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity");
+                    context = activity.Call<AndroidJavaObject>("getApplicationContext");
+                    serviceCallbacks = new ServiceCallbacks();
+                }
+
+                //Create a new service binding
+                Debug.Log("CreateAndroidBinding - Creating a new service binder");
+                _serviceBinder = new AndroidJavaObject("com.ultraleap.tracking.service_binder.ServiceBinder", context, serviceCallbacks);
+                success = _serviceBinder.Call<bool>("bind");
+                if (success)
+                {
+                    Debug.Log("CreateAndroidBinding - Binding of service binder complete");
+                }
+                else
+                {
+                    Debug.LogWarning("CreateAndroidBinding - service binder bind call failed");
+                }
+            }
+            catch (Exception e)
+            {
+                Debug.LogWarning("CreateAndroidBinding - Failed to bind service: " + e.Message);
+                _serviceBinder = null;
+                success = false;
+            }
+
+            return success;
 #endif
         }
 
-        // No longer necessary but would be a breaking change if removed
         protected virtual void OnDisable()
         {
+            if (_serviceBinder != null)
+            {
+                Debug.Log("ServiceBinder.unbind...");
+                _serviceBinder.Call("unbind");
+            }
         }
 
 #else
-        // No longer necessary but would be a breaking change if removed
         protected virtual void OnEnable()
         {
         }
 
-        // No longer necessary but would be a breaking change if removed
         protected virtual void OnDisable()
         {
         }
@@ -614,7 +657,7 @@ namespace Leap.Unity
                 _smoothedTrackingLatency.Update((float)(_leapController.Now() - _leapController.FrameTimestamp()), Time.deltaTime);
 #endif
                 long timestamp = CalculateInterpolationTime() + (ExtrapolationAmount * 1000);
-                _unityToLeapOffset = timestamp - (long)(Time.time * S_TO_US);
+                _unityToLeapOffset = timestamp - (long)(Time.time * S_TO_NS);
 
                 _leapController.GetInterpolatedFrameFromTime(_untransformedUpdateFrame, timestamp, CalculateInterpolationTime() - (BounceAmount * 1000), _currentDevice);
             }
@@ -650,7 +693,7 @@ namespace Leap.Unity
                         // timeline as Update.  We add an extrapolation value to help compensate
                         // for latency.
                         float extrapolatedTime = Time.fixedTime + CalculatePhysicsExtrapolation();
-                        timestamp = (long)(extrapolatedTime * S_TO_US) + _unityToLeapOffset;
+                        timestamp = (long)(extrapolatedTime * S_TO_NS) + _unityToLeapOffset;
                         break;
                     case FrameOptimizationMode.ReusePhysicsForUpdate:
                         // If we are re-using physics frames for update, we don't even want to care
@@ -879,9 +922,7 @@ namespace Leap.Unity
                 return;
             }
 
-            string serialNumber = _multipleDeviceMode != MultipleDeviceMode.Disabled ? SpecificSerialNumber : "";
-
-            _leapController = new Controller(serialNumber.GetHashCode(), _serverNameSpace, _multipleDeviceMode != MultipleDeviceMode.Disabled);
+            _leapController = new Controller(SpecificSerialNumber.GetHashCode(), _serverNameSpace, _multipleDeviceMode != MultipleDeviceMode.Disabled);
 
             _leapController.Device += (s, e) =>
             {
@@ -1043,33 +1084,6 @@ namespace Leap.Unity
         protected virtual void transformFrame(Frame source, Frame dest)
         {
             dest.CopyFrom(source).Transform(new LeapTransform(transform));
-        }
-
-        private TrackingSource CheckLeapServiceAvailable()
-        {
-            if (_trackingSource != TrackingSource.NONE)
-            {
-                return _trackingSource;
-            }
-
-#if UNITY_ANDROID && !UNITY_EDITOR
-            if(AndroidServiceBinder.Bind())
-            {
-                _trackingSource = TrackingSource.LEAPC;
-                return _trackingSource;
-            }
-#endif
-
-            if (LeapInternal.Connection.IsConnectionAvailable(_serverNameSpace))
-            {
-                _trackingSource = TrackingSource.LEAPC;
-            }
-            else
-            {
-                _trackingSource = TrackingSource.NONE;
-            }
-
-            return _trackingSource;
         }
 
         #endregion

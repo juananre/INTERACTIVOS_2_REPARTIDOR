@@ -128,3 +128,9 @@ con este logré hacer que el cubo cambiase de color al enviarle un mensaje a tra
 
 ![CuboRojo](Imagenes/CuboRojo.png)
 ![CuboRojo](Imagenes/CuboNegro.png)
+## Juan Andres Ferrer Dueñas
+implemente el funcionamiento del leap pero aun no puedo hacer prubas en implamentes una zona de pruebas donde las personas puedadn trabajar al igual que las ramificaciones. un ma dificialta es el que no pude encontrar una palaca de cambios y por eso decidi modelarda.
+
+![Captura3](https://user-images.githubusercontent.com/78058130/217722809-e8744dde-9925-4866-99c4-b51ab8279f28.JPG)
+![Captura2](https://user-images.githubusercontent.com/78058130/217722832-edf28ea2-7f46-408b-9491-d7cb900d5c6c.JPG)
+![Captura](https://user-images.githubusercontent.com/78058130/217722841-a33356e9-237a-49d8-bfad-a8cb4b286658.JPG)

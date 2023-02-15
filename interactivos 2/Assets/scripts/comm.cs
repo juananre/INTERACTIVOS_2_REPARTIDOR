@@ -1,9 +1,12 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class comm : MonoBehaviour
@@ -51,8 +54,21 @@ public class comm : MonoBehaviour
                 byte[] data = receiveClient.Receive(ref receiveEndPoint);
                 string text = Encoding.UTF8.GetString(data);
                 zigSimData zigSimdata = zigSimData.CreateFromJSON(text);
-                Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
-                double[] coordenadas = new double[3] { zigSimdata.sensordata.gyro.x, zigSimdata.sensordata.gyro.y, zigSimdata.sensordata.gyro.z };
+                //Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
+                /*
+                double coorX = zigSimdata.sensordata.gyro.x;
+                double coorY = zigSimdata.sensordata.gyro.y;
+                double coorZ = zigSimdata.sensordata.gyro.z;
+                */
+                float[] coordenadas = (new float[] { zigSimdata.sensordata.gravity.x, zigSimdata.sensordata.gravity.y, zigSimdata.sensordata.gravity.z });
+                
+                //byte[] dataBytes = new byte[12];
+                /*
+                Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.x), 0, dataBytes, 0, 4);
+                Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.y), 0, dataBytes, 4, 4);
+                Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.z), 0, dataBytes, 8, 4);
+                */
+
                 SerializeMessage(coordenadas);
             }
             catch (System.Exception ex)
@@ -62,12 +78,12 @@ public class comm : MonoBehaviour
         }
     }
 
-    private void SerializeMessage(double[] menssage)
+    private void SerializeMessage(float[] menssage)
     {
         try
         {
-            float value = 0;
-            receiveQueue.Enqueue(value);
+
+            receiveQueue.Enqueue((System.Object) menssage);
 
 
 
@@ -112,11 +128,21 @@ public class comm : MonoBehaviour
 
     void Update()
     {
-        if (receiveQueue.Count != 0)
-        {
-            double coordenadas = (double)receiveQueue.Dequeue();
-            if (coordenadas == 1 ) m_Material.color = Color.black;
-            if (coordenadas == 2) m_Material.color = Color.red;
+        if (receiveQueue.Count != 0) { 
+            float[] message;
+
+            message = (float[]) receiveQueue.Dequeue();
+
+            if(message[1] < 0F)
+            {
+                m_Material.color = Color.black;
+            }
+            else
+            {
+                m_Material.color = Color.red;
+            }
+            //if (cX == 1 ) 
+            //if (cX == 2) m_Material.color = Color.red;
 
         }
 

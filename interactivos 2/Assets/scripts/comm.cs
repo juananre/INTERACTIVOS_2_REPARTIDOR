@@ -138,7 +138,7 @@ public class comm : MonoBehaviour
             {
                 m_Material.color = Color.black;
 
-                if (incinacion > -40)
+                if (incinacion > -200000)
                 {
                     cube.transform.Rotate(0, -2, 0);
                     incinacion -= 2;
@@ -149,7 +149,7 @@ public class comm : MonoBehaviour
             {
                 m_Material.color = Color.red;
                 
-                if (incinacion < 40)
+                if (incinacion < 200000)
                 {
                     cube.transform.Rotate(0, 2, 0);
                     incinacion += 2;

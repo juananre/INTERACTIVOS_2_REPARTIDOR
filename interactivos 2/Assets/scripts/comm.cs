@@ -11,7 +11,7 @@ using UnityEngine;
 
 public class comm : MonoBehaviour
 {
-
+    static int incinacion;
     private static comm instance;
     private Thread receiveThread;
     private UdpClient receiveClient;
@@ -30,6 +30,7 @@ public class comm : MonoBehaviour
 
     private void Start()
     {
+
         m_Material = cube.GetComponent<Renderer>().material;
     }
 
@@ -61,7 +62,7 @@ public class comm : MonoBehaviour
                 double coorZ = zigSimdata.sensordata.gyro.z;
                 */
                 float[] coordenadas = (new float[] { zigSimdata.sensordata.gravity.x, zigSimdata.sensordata.gravity.y, zigSimdata.sensordata.gravity.z });
-                
+
                 //byte[] dataBytes = new byte[12];
                 /*
                 Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.x), 0, dataBytes, 0, 4);
@@ -83,7 +84,7 @@ public class comm : MonoBehaviour
         try
         {
 
-            receiveQueue.Enqueue((System.Object) menssage);
+            receiveQueue.Enqueue((System.Object)menssage);
 
 
 
@@ -128,18 +129,31 @@ public class comm : MonoBehaviour
 
     void Update()
     {
-        if (receiveQueue.Count != 0) { 
+        if (receiveQueue.Count != 0) {
             float[] message;
 
-            message = (float[]) receiveQueue.Dequeue();
+            message = (float[])receiveQueue.Dequeue();
 
-            if(message[1] < 0F)
+            if (message[1] < 0.2F)
             {
                 m_Material.color = Color.black;
+
+                if (incinacion > -40)
+                {
+                    cube.transform.Rotate(0, -2, 0);
+                    incinacion -= 2;
+
+                }
             }
-            else
+            if (message[1] > -0.2F)
             {
                 m_Material.color = Color.red;
+                
+                if (incinacion < 40)
+                {
+                    cube.transform.Rotate(0, 2, 0);
+                    incinacion += 2;
+                }               
             }
             //if (cX == 1 ) 
             //if (cX == 2) m_Material.color = Color.red;

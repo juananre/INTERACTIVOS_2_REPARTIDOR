@@ -17,7 +17,7 @@ public class zigSimData
 [System.Serializable]
 public class dataSensors
 {
-    public dataGyro gyro;
+    public dataGyro gravity;
 }
 
 [System.Serializable]

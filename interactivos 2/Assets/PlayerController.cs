@@ -28,21 +28,23 @@ public class PlayerController : MonoBehaviour
         {
             cambio -= 10f;
         }
-        if (Input.GetKeyDown(KeyCode.Space)) { run =1;}
+        if (Input.GetKeyDown(KeyCode.C)) { run =1;}
         if (Input.GetKeyDown(KeyCode.V)) { run = 0; }
         if ((speed < cambio)) { MasSpeed(); } else { MenosSpeed(); }
+        if (run == 0) MenosSpeed();
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
         if (cambio >= 50) cambio = 50;
+      
         
     }
     void MasSpeed()
-    {   if (run == 1) { speed += 0.05f;}
+    {   if (run == 1) { speed += 0.02f;}
      
     }
     void MenosSpeed()
     {
-         speed -= 0.05f; 
+         speed -= 0.02f; 
     }
 
 }

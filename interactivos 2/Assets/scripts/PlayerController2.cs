@@ -4,7 +4,7 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     public byte run;
     public float cambio = 0f;
@@ -22,11 +22,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            cambio += 2f;
+            cambio += 10f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            cambio -= 2f;
+            cambio -= 10f;
         }
         if (Input.GetKeyDown(KeyCode.C)) { run =1;}
         if (Input.GetKeyDown(KeyCode.V)) { run = 0; }
@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
         if (run == 0) MenosSpeed();
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
-        if (cambio >= 12) cambio = 12;
+        if (cambio >= 50) cambio = 50;
       
         
     }

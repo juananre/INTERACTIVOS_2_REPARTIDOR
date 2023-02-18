@@ -18,15 +18,15 @@ public class PlayerController2 : MonoBehaviour
     void Update()
     {
          
-         transform.Translate(Vector3.fwd * Time.deltaTime * speed);
+         transform.Translate(Vector3.down * Time.deltaTime * speed);
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            cambio += 10f;
+            cambio += 2f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            cambio -= 10f;
+            cambio -= 2f;
         }
         if (Input.GetKeyDown(KeyCode.C)) { run =1;}
         if (Input.GetKeyDown(KeyCode.V)) { run = 0; }
@@ -34,12 +34,23 @@ public class PlayerController2 : MonoBehaviour
         if (run == 0) MenosSpeed();
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
-        if (cambio >= 50) cambio = 50;
+        if (cambio >= 20) cambio = 20;
       
         
     }
     void MasSpeed()
-    {   if (run == 1) { speed += 0.02f;}
+    { if (Input.GetKey(KeyCode.Space)) 
+        {
+            if (run == 1)
+            {
+                speed += 0.02f;
+            }
+            else
+            {
+                speed -= 0.02f;
+                
+            } 
+        } 
      
     }
     void MenosSpeed()

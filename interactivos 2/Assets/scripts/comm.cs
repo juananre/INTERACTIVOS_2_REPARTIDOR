@@ -55,7 +55,7 @@ public class comm : MonoBehaviour
                 byte[] data = receiveClient.Receive(ref receiveEndPoint);
                 string text = Encoding.UTF8.GetString(data);
                 zigSimData zigSimdata = zigSimData.CreateFromJSON(text);
-                Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
+                //Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
                 /*
                 double coorX = zigSimdata.sensordata.gyro.x;
                 double coorY = zigSimdata.sensordata.gyro.y;

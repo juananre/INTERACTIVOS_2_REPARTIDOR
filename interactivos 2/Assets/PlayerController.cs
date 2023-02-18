@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
@@ -35,11 +36,12 @@ public class PlayerController : MonoBehaviour
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
         if (cambio >= 12) cambio = 12;
+        if(speed -cambio <= -6) { MenosSpeed(); }
       
         
     }
     void MasSpeed()
-    {   if (run == 1) { if ((Input.GetKey(KeyCode.Space))) { speed += 0.02f; } }
+    {   if (run == 1) { if ((Input.GetKey(KeyCode.Space))) { speed += 0.02f; } else { MenosSpeed(); } }
      
     }
     void MenosSpeed()

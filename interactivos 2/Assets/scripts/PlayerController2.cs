@@ -2,10 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
-using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class PlayerController : MonoBehaviour
+public class PlayerController2 : MonoBehaviour
 {
     public byte run;
     public float cambio = 0f;
@@ -23,11 +22,11 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.W))
         {
-            cambio += 2f;
+            cambio += 10f;
         }
         if (Input.GetKeyDown(KeyCode.S))
         {
-            cambio -= 2f;
+            cambio -= 10f;
         }
         if (Input.GetKeyDown(KeyCode.C)) { run =1;}
         if (Input.GetKeyDown(KeyCode.V)) { run = 0; }
@@ -35,13 +34,12 @@ public class PlayerController : MonoBehaviour
         if (run == 0) MenosSpeed();
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
-        if (cambio >= 12) cambio = 12;
-        if(speed -cambio <= -6) { MenosSpeed(); }
+        if (cambio >= 50) cambio = 50;
       
         
     }
     void MasSpeed()
-    {   if (run == 1) { if ((Input.GetKey(KeyCode.Space))) { speed += 0.02f; } else { MenosSpeed(); } }
+    {   if (run == 1) { speed += 0.02f;}
      
     }
     void MenosSpeed()

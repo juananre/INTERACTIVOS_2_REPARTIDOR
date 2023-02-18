@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
         
     }
     void MasSpeed()
-    {   if (run == 1) { speed += 0.02f;}
+    {   if (run == 1) { if ((Input.GetKey(KeyCode.Space))) { speed += 0.02f; } }
      
     }
     void MenosSpeed()

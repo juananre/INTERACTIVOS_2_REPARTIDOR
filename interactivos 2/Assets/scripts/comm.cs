@@ -141,7 +141,7 @@ public class comm : MonoBehaviour
 
                 if (incinacion > -200000)
                 {
-                    cube.transform.Rotate(0, 0,-1);
+                    cube.transform.Rotate(0, 0,-2);
                     incinacion -= 2;
 
                 }
@@ -152,7 +152,7 @@ public class comm : MonoBehaviour
 
                 if (incinacion < 200000)
                 {
-                    cube.transform.Rotate(0, 0,1);
+                    cube.transform.Rotate(0, 0,2);
                     incinacion += 2;
                 }
             }

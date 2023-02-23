@@ -128,3 +128,6 @@ con este logré hacer que el cubo cambiase de color al enviarle un mensaje a tra
 
 ![CuboRojo](Imagenes/CuboRojo.png)
 ![CuboRojo](Imagenes/CuboNegro.png)
+
+
+Para lograr que el cubo recibiera algo más allá de únicamente ordenes de ponerse en rojo o negro, usamos una aplicación llamda zig zim, con ella le enviamos la información de un array llamado “gravity” para esto modificamos el codigo, y con esto le pedimos que al recibir valores dentro de ciertos márgenes el cubo se voltease.

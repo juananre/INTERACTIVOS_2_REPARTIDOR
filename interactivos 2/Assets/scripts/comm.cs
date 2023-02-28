@@ -20,8 +20,8 @@ public class comm : MonoBehaviour
     public int receivePort = 64;
     private bool isInitialized;
     private Queue receiveQueue;
-    public GameObject Carrito5;
-   
+    public GameObject cube;
+    //private Material m_Material;
 
     private void Awake()
     {
@@ -31,7 +31,7 @@ public class comm : MonoBehaviour
     private void Start()
     {
 
-        //m_Material = Carrito5.GetComponent<Renderer>().material;
+        //m_Material = cube.GetComponent<Renderer>().material;
     }
 
     private void Initialize()
@@ -42,7 +42,7 @@ public class comm : MonoBehaviour
         receiveQueue = Queue.Synchronized(new Queue()); //puerta
         receiveThread = new Thread(new ThreadStart(ReceiveDataListener)); //Crear nuevo hilo
         receiveThread.IsBackground = true;
-        //receiveThread.Start();
+        receiveThread.Start();
         isInitialized = true;
     }
 
@@ -55,7 +55,7 @@ public class comm : MonoBehaviour
                 byte[] data = receiveClient.Receive(ref receiveEndPoint);
                 string text = Encoding.UTF8.GetString(data);
                 zigSimData zigSimdata = zigSimData.CreateFromJSON(text);
-                //Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
+                //Debug.Log(zigSimdata.sensordata.gravity.x + "," + zigSimdata.sensordata.gravity.y);
                 /*
                 double coorX = zigSimdata.sensordata.gyro.x;
                 double coorY = zigSimdata.sensordata.gyro.y;
@@ -129,7 +129,8 @@ public class comm : MonoBehaviour
 
     void Update()
     {
-        if (receiveQueue.Count != 0) {
+        if (receiveQueue.Count != 0)
+        {
             float[] message;
 
             message = (float[])receiveQueue.Dequeue();
@@ -140,7 +141,7 @@ public class comm : MonoBehaviour
 
                 if (incinacion > -200000)
                 {
-                    Carrito5.transform.Rotate(0, -2, 0);
+                    cube.transform.Rotate(0, 0,-2);
                     incinacion -= 2;
 
                 }
@@ -148,12 +149,12 @@ public class comm : MonoBehaviour
             if (message[1] > -0.2F)
             {
                 //m_Material.color = Color.red;
-                
+
                 if (incinacion < 200000)
                 {
-                    Carrito5.transform.Rotate(0, 2, 0);
+                    cube.transform.Rotate(0, 0,2);
                     incinacion += 2;
-                }               
+                }
             }
             //if (cX == 1 ) 
             //if (cX == 2) m_Material.color = Color.red;

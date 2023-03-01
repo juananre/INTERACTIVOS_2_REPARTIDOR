@@ -50,5 +50,12 @@ public class PlayerController2 : MonoBehaviour
     {
         speed -= 0.02f;
     }
-
+    public void sube()
+    {
+        cambio += 2f;
+    }
+    public void baja()
+    {
+        cambio -= 2f;
+    }
 }

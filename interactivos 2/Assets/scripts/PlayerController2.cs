@@ -22,14 +22,7 @@ public class PlayerController2 : MonoBehaviour
 
         transform.Translate(Vector3.down * Time.deltaTime * speed);
 
-        if (Input.GetKeyDown(KeyCode.W))
-        {
-            cambio += 2f;
-        }
-        if (Input.GetKeyDown(KeyCode.S))
-        {
-            cambio -= 2f;
-        }
+        
         if (Input.GetKeyDown(KeyCode.C)) { run = 1; }
         if (Input.GetKeyDown(KeyCode.V)) { run = 0; }
         if ((speed < cambio)) { MasSpeed(); } else { MenosSpeed(); }
@@ -52,10 +45,12 @@ public class PlayerController2 : MonoBehaviour
     }
     public void sube()
     {
+        Debug.Log("si");
         cambio += 2f;
     }
     public void baja()
     {
+        Debug.Log("si");
         cambio -= 2f;
     }
 }

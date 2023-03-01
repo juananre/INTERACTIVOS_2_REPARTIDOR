@@ -15,12 +15,12 @@ public class PlayerController2 : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        transform.Translate(Vector3.down * Time.deltaTime * speed);
+        
     }
     void Update()
     {
 
-       
+        transform.Translate(Vector3.down * Time.deltaTime * speed);
 
         if (Input.GetKeyDown(KeyCode.W))
         {

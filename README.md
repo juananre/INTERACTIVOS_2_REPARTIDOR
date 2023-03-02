@@ -140,6 +140,8 @@ Ahora que se mueve hicimos un playerController, el cual tiene como función move
 
 Se hizo un modelo del carro lowpoly, que no consuma muchos recursos ya que probando assets de vehiculos realistas consumia demasiado, tuvimos unos problemas breves exportando los modelos a unity pero se logor solucionar para que quedara como deberia.
 
+![image](https://media.discordapp.net/attachments/1076728843009790045/1080943698352808027/IMG-20230302-WA0007.jpg)
+
 
 Ya con esto funcionando tomamos, el cubo y lo reemplazamos por un asset de un vehículo, y un escenario de una pequeña ciudad el cual le agregó mucho movimiento, a demás de hacer posible que el vehículo se pueda encender, apagar, tener 5 cambios diferentes a demás de acelerar y desacelerar dependiendo de como utilices el botón destinado para ello
 
@@ -171,3 +173,5 @@ Encontramos un error el cual no permitía comunicar el Leap y el teclado al tiem
 Se tomaron las medidas y planteamos lo materiales que se usaran para el montaje, en el que al inicio planeabamos hacerlo con tubos PVC por su alta resistencia pero seria muy costoso, por lo que al final se decidio que usariamos madera ya que tenemos las herramientas para trabajar con madera y es mas flexible, el unico problema que tendremos con un montaje en madera es el transporte, ya que no se puede desensamblar las piezas para transportarlo, al contrario de PVC. Se plantea que se movera la silla para acomodar a los diferentes usuarios con un mecanismo parecido al de los vehiculos. Se le realizaron unos planos y un modelo 3D al montaje para tener la idea, esta planeado comprar los materiales y empezar a hacerlo para la proxima semana.
 
 El mapa esta en proceso, cerca de terminarse para empezar a implementar los anteriores avances para estar montando todo.
+
+

@@ -143,9 +143,25 @@ Ya con esto funcionando tomamos, el cubo y lo reemplazamos por un asset de un ve
 
 [(Carro en movimiento)](https://youtu.be/uHbwmQEYOUw)
 
+
+## leap
+
+implemente el funcionamiento del leap pero aun no puedo hacer prubas en implamentes una zona de pruebas donde las personas puedadn trabajar al igual que las ramificaciones. un ma dificialta es el que no pude encontrar una palaca de cambios y por eso decidi modelarda.
+
+![Captura3](https://user-images.githubusercontent.com/78058130/217722809-e8744dde-9925-4866-99c4-b51ab8279f28.JPG)
+![Captura2](https://user-images.githubusercontent.com/78058130/217722832-edf28ea2-7f46-408b-9491-d7cb900d5c6c.JPG)
+![Captura](https://user-images.githubusercontent.com/78058130/217722841-a33356e9-237a-49d8-bfad-a8cb4b286658.JPG)
+
+
+Al momento de adaptar las manos con la interacción hubo un error que rompía el rig de las manos, no permitiendo interacciones 
+![image](https://user-images.githubusercontent.com/78058130/220830084-4c852f87-e74d-4910-8734-00e3268e4df0.png)
+pero se logró corregir remplazando por otro modelo de malos.
+en cuanto a la palanca se mantiene funcionando pero requiere de un rig propio para que no se dañe la caja de cambios
+
+
 ## Prototipo #3
 
-
+## Avance 3.1
 Encontramos un error el cual no permitía comunicar el Leap y el teclado al tiempo, esta incompatibilidad se debía a que estábamos utilizando “(Input.GetKeyDown(KeyCode.W))” tanto en los botones del Leap como en los del teclado lo que generaba incompatibilidades dado a que al presionar el boton no se daba la acción esperada, introducimos dos cajas que hagan la función de botones, y así poder controlar los cambios del vehículo a partir del Leap.
 
 ![CubosCambios](Imagenes/Cubos.png)

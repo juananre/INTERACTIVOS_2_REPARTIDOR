@@ -145,3 +145,5 @@ Ya con esto funcionando tomamos, el cubo y lo reemplazamos por un asset de un ve
 
 
 Encontramos un error el cual no permitía comunicar el Leap y el teclado al tiempo, esta incompatibilidad se debía a que estábamos utilizando “(Input.GetKeyDown(KeyCode.W))” tanto en los botones del Leap como en los del teclado lo que generaba incompatibilidades dado a que al presionar el boton no se daba la acción esperada, introducimos dos cajas que hagan la función de botones, y así poder controlar los cambios del vehículo a partir del Leap.
+
+![CubosCambios](Imagenes/Cubos.png)

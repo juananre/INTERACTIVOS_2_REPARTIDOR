@@ -132,15 +132,16 @@ con este logré hacer que el cubo cambiase de color al enviarle un mensaje a tra
 
 Para lograr que el cubo recibiera algo más allá de únicamente ordenes de ponerse en rojo o negro, usamos una aplicación llamda zig zim, con ella le enviamos la información de un array llamado “gravity” para esto modificamos el codigo, y con esto le pedimos que al recibir valores dentro de ciertos márgenes el cubo se voltease.
 
-[(Giro del cubo)]: https://www.youtube.com/watch?v=OpWp2a5FJ08
+[(Giro del cubo)](https://www.youtube.com/watch?v=OpWp2a5FJ08)
 
 Ahora que se mueve hicimos un playerController, el cual tiene como función mover el cubo hacia adelante y agregarle un collider, el cual le proporcionó la gravedad a el cubo y la posibilidad de colisionar con diferentes objetos del escenario.
 
-[(Movimiento del cubo)]: (https://youtu.be/MATfODdEWHo)
+[(Movimiento del cubo)](https://youtu.be/MATfODdEWHo)
 
 
 Ya con esto funcionando tomamos, el cubo y lo reemplazamos por un asset de un vehículo, y un escenario de una pequeña ciudad el cual le agregó mucho movimiento, a demás de hacer posible que el vehículo se pueda encender, apagar, tener 5 cambios diferentes a demás de acelerar y desacelerar dependiendo de como utilices el botón destinado para ello
-[(Carro en movimiento)]: https://youtu.be/uHbwmQEYOUw
+
+[(Carro en movimiento)](https://youtu.be/uHbwmQEYOUw)
 
 
 

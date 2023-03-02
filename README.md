@@ -158,10 +158,8 @@ Al momento de adaptar las manos con la interacción hubo un error que rompía el
 pero se logró corregir remplazando por otro modelo de malos.
 en cuanto a la palanca se mantiene funcionando pero requiere de un rig propio para que no se dañe la caja de cambios
 
-
-## Prototipo #3
-
 ## Avance 3.1
+
 Encontramos un error el cual no permitía comunicar el Leap y el teclado al tiempo, esta incompatibilidad se debía a que estábamos utilizando “(Input.GetKeyDown(KeyCode.W))” tanto en los botones del Leap como en los del teclado lo que generaba incompatibilidades dado a que al presionar el boton no se daba la acción esperada, introducimos dos cajas que hagan la función de botones, y así poder controlar los cambios del vehículo a partir del Leap.
 
 ![CubosCambios](Imagenes/Cubos.png)

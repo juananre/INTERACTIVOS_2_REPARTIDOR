@@ -1,5 +1,7 @@
 # INTERACTIVOS_2_REPARTIDOR
 
+#Prototipo #1
+
 ## Brainstorm
 Comenzamos pensando diversas formas de llegar a entregar algo entretenido, educativo y que a su vez cumpliese las expectativas del curso, para cumplir todos estos objetivos se nos ocurrió crear un juego donde tengas que moverte a través de una ciudad en un coche respetando las reglas de tránsito, de esta manera conectamos de diferentes maneras diversos dispositivos a un computador, como por ejemplo un celular para tomar la inclinación del volante, una cámara live motion para hacer los cambios de marcha y un controlador para acelerar y frenar con los pies.
 ![FLive](https://mocap.reallusion.com/iclone-motion-live-mocap/includes/images/leapmotion/LeapMotion-Feature.jpg)
@@ -123,13 +125,13 @@ public class comm : MonoBehaviour
     }
 
 }
-
+#Prototipo #2
 con este logré hacer que el cubo cambiase de color al enviarle un mensaje a través de Hercules Terminal, sigo investigando la manera de enviar estos mensajes a través del celular.
 
 ![CuboRojo](Imagenes/CuboRojo.png)
 ![CuboRojo](Imagenes/CuboNegro.png)
 
-
+#Prototipo #3
 Para lograr que el cubo recibiera algo más allá de únicamente ordenes de ponerse en rojo o negro, usamos una aplicación llamda zig zim, con ella le enviamos la información de un array llamado “gravity” para esto modificamos el codigo, y con esto le pedimos que al recibir valores dentro de ciertos márgenes el cubo se voltease.
 
 [(Giro del cubo)](https://www.youtube.com/watch?v=OpWp2a5FJ08)

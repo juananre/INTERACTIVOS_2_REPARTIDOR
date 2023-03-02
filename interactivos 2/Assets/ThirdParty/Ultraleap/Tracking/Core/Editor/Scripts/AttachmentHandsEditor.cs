@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) Ultraleap, Inc. 2011-2023.                                   *
+ * Copyright (C) Ultraleap, Inc. 2011-2022.                                   *
  *                                                                            *
  * Use subject to the terms of the Apache License 2.0 available at            *
  * http://www.apache.org/licenses/LICENSE-2.0, or another agreement           *
@@ -116,7 +116,7 @@ namespace Leap.Unity.Attachments
 
                 target.attachmentPoints = attachmentPoints | flag; // Set flag bit to 1.
             }
-            else if ((attachmentPoints & flag) == flag) // only delete the attachment point, if the toggle value has actually just been changed
+            else
             {
                 if (!wouldFlagDeletionDestroyData(target, flag))
                 {

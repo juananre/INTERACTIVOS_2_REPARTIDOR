@@ -1,5 +1,5 @@
 /******************************************************************************
- * Copyright (C) Ultraleap, Inc. 2011-2023.                                   *
+ * Copyright (C) Ultraleap, Inc. 2011-2022.                                   *
  *                                                                            *
  * Use subject to the terms of the Apache License 2.0 available at            *
  * http://www.apache.org/licenses/LICENSE-2.0, or another agreement           *
@@ -7,7 +7,6 @@
  ******************************************************************************/
 
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 namespace Leap.Unity.Interaction
@@ -117,8 +116,6 @@ namespace Leap.Unity.Interaction
 
         Dictionary<IInteractionBehaviour, float> contactingInteractionBehaviours = new Dictionary<IInteractionBehaviour, float>();
 
-        List<IInteractionBehaviour> contactingStayInteractionBehaviours = new List<IInteractionBehaviour>();
-
         void Start()
         {
             interactionController.manager.contactBoneBodies[rigidbody] = this;
@@ -129,23 +126,6 @@ namespace Leap.Unity.Interaction
             interactionController.manager.contactBoneBodies.Remove(rigidbody);
         }
 
-        private void FixedUpdate()
-        {
-            for (int i = contactingInteractionBehaviours.Count - 1; i >= contactingInteractionBehaviours.Count; i--)
-            {
-                IInteractionBehaviour currentBehaviour = contactingInteractionBehaviours.ElementAt(i).Key;
-
-                if (!contactingStayInteractionBehaviours.Contains(currentBehaviour))
-                {
-                    interactionController.NotifyContactBoneCollisionExit(this, currentBehaviour);
-
-                    contactingInteractionBehaviours.Remove(currentBehaviour);
-                }
-            }
-
-            contactingStayInteractionBehaviours.Clear();
-        }
-
         void OnCollisionEnter(Collision collision)
         {
             if (collision.rigidbody != null)
@@ -153,9 +133,6 @@ namespace Leap.Unity.Interaction
                 IInteractionBehaviour interactionObj;
                 if (interactionController.manager.interactionObjectBodies.TryGetValue(collision.rigidbody, out interactionObj))
                 {
-                    if (!contactingStayInteractionBehaviours.Contains(interactionObj))
-                        contactingStayInteractionBehaviours.Add(interactionObj);
-
                     _lastObjectTouchedAdjustedMass = collision.rigidbody.mass;
                     if (interactionObj is InteractionBehaviour)
                     {
@@ -192,15 +169,18 @@ namespace Leap.Unity.Interaction
             if (collision.rigidbody == null) { return; }
 
             IInteractionBehaviour interactionObj;
+            float timeEntered = 0;
             if (interactionController.manager.interactionObjectBodies.TryGetValue(collision.rigidbody, out interactionObj))
             {
-                if (!contactingStayInteractionBehaviours.Contains(interactionObj))
-                    contactingStayInteractionBehaviours.Add(interactionObj);
-
                 if (!contactingInteractionBehaviours.ContainsKey(interactionObj))
                 {
                     interactionController.NotifyContactBoneCollisionEnter(this, interactionObj);
                     contactingInteractionBehaviours.Add(interactionObj, Time.fixedTime);
+                }
+                else if (contactingInteractionBehaviours.TryGetValue(interactionObj, out timeEntered) && Time.fixedTime - timeEntered > Time.fixedDeltaTime * 20f)
+                {
+                    interactionController.NotifyContactBoneCollisionExit(this, interactionObj);
+                    contactingInteractionBehaviours.Remove(interactionObj);
                 }
             }
         }
@@ -228,6 +208,7 @@ namespace Leap.Unity.Interaction
             if (interactionController.manager.interactionObjectBodies.TryGetValue(collider.attachedRigidbody, out interactionObj))
             {
                 interactionController.NotifyContactBoneCollisionEnter(this, interactionObj);
+
                 interactionController.NotifySoftContactCollisionEnter(this, interactionObj, collider);
             }
         }
@@ -240,8 +221,11 @@ namespace Leap.Unity.Interaction
             if (interactionController.manager.interactionObjectBodies.TryGetValue(collider.attachedRigidbody, out interactionObj))
             {
                 interactionController.NotifyContactBoneCollisionExit(this, interactionObj);
+
                 interactionController.NotifySoftContactCollisionExit(this, interactionObj, collider);
             }
         }
+
     }
+
 }

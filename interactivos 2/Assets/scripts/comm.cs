@@ -1,14 +1,17 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
+using UnityEditor.VersionControl;
 using UnityEngine;
 
 public class comm : MonoBehaviour
 {
-
+    static int incinacion;
     private static comm instance;
     private Thread receiveThread;
     private UdpClient receiveClient;
@@ -18,7 +21,7 @@ public class comm : MonoBehaviour
     private bool isInitialized;
     private Queue receiveQueue;
     public GameObject cube;
-    private Material m_Material;
+    //private Material m_Material;
 
     private void Awake()
     {
@@ -27,7 +30,8 @@ public class comm : MonoBehaviour
 
     private void Start()
     {
-        m_Material = cube.GetComponent<Renderer>().material;
+
+        //m_Material = cube.GetComponent<Renderer>().material;
     }
 
     private void Initialize()
@@ -51,9 +55,22 @@ public class comm : MonoBehaviour
                 byte[] data = receiveClient.Receive(ref receiveEndPoint);
                 string text = Encoding.UTF8.GetString(data);
                 zigSimData zigSimdata = zigSimData.CreateFromJSON(text);
-                Debug.Log(zigSimdata.sensordata.gyro.x + "," + zigSimdata.sensordata.gyro.y);
+                //Debug.Log(zigSimdata.sensordata.gravity.x + "," + zigSimdata.sensordata.gravity.y);
+                /*
+                double coorX = zigSimdata.sensordata.gyro.x;
+                double coorY = zigSimdata.sensordata.gyro.y;
+                double coorZ = zigSimdata.sensordata.gyro.z;
+                */
+                float[] coordenadas = (new float[] { zigSimdata.sensordata.gravity.x, zigSimdata.sensordata.gravity.y, zigSimdata.sensordata.gravity.z });
 
-                //SerializeMessage(text);
+                //byte[] dataBytes = new byte[12];
+                /*
+                Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.x), 0, dataBytes, 0, 4);
+                Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.y), 0, dataBytes, 4, 4);
+                Array.Copy(BitConverter.GetBytes(zigSimdata.sensordata.gyro.z), 0, dataBytes, 8, 4);
+                */
+
+                SerializeMessage(coordenadas);
             }
             catch (System.Exception ex)
             {
@@ -62,17 +79,24 @@ public class comm : MonoBehaviour
         }
     }
 
-    private void SerializeMessage(string message)
+    private void SerializeMessage(float[] menssage)
     {
         try
         {
-            string[] chain = message.Split(' ');
-            string key = chain[0];
-            float value = 0;
-            if (float.TryParse(chain[1], out value))
-            {
-                receiveQueue.Enqueue(value);
-            }
+
+            receiveQueue.Enqueue((System.Object)menssage);
+
+
+
+            /*
+             string[] chain = message.Split(' ');
+             string key = chain[0];
+             float value = 0;
+             if (float.TryParse(chain[1], out value))
+             {
+                 receiveQueue.Enqueue(value);
+             }
+            */
         }
         catch (System.Exception e)
         {
@@ -107,10 +131,34 @@ public class comm : MonoBehaviour
     {
         if (receiveQueue.Count != 0)
         {
-            float counter = (float)receiveQueue.Dequeue();
+            float[] message;
 
-            if (counter == 1F) m_Material.color = Color.black;
-            if (counter == 2F) m_Material.color = Color.red;
+            message = (float[])receiveQueue.Dequeue();
+
+            if (message[1] < 0.2F)
+            {
+                //m_Material.color = Color.black;
+
+                if (incinacion > -200000)
+                {
+                    cube.transform.Rotate(0, 0,-2);
+                    incinacion -= 2;
+
+                }
+            }
+            if (message[1] > -0.2F)
+            {
+                //m_Material.color = Color.red;
+
+                if (incinacion < 200000)
+                {
+                    cube.transform.Rotate(0, 0,2);
+                    incinacion += 2;
+                }
+            }
+            //if (cX == 1 ) 
+            //if (cX == 2) m_Material.color = Color.red;
+
         }
 
     }

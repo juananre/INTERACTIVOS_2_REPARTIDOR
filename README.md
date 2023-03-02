@@ -1,14 +1,13 @@
 # INTERACTIVOS_2_REPARTIDOR
 
-#Prototipo #1
+## Prototipo #1
 
-## Brainstorm
+Brainstorm
 Comenzamos pensando diversas formas de llegar a entregar algo entretenido, educativo y que a su vez cumpliese las expectativas del curso, para cumplir todos estos objetivos se nos ocurrió crear un juego donde tengas que moverte a través de una ciudad en un coche respetando las reglas de tránsito, de esta manera conectamos de diferentes maneras diversos dispositivos a un computador, como por ejemplo un celular para tomar la inclinación del volante, una cámara live motion para hacer los cambios de marcha y un controlador para acelerar y frenar con los pies.
 ![FLive](https://mocap.reallusion.com/iclone-motion-live-mocap/includes/images/leapmotion/LeapMotion-Feature.jpg)
 ![FCarro](https://www.infobae.com/new-resizer/_JrNAvjIeELPSozYjXRd5qu_-nU=/1200x900/filters:format(webp):quality(85)//cloudfront-us-east-1.images.arcpublishing.com/infobae/M4TLYYA5CZDUFGQFUEHOLVYWSI.jpg)
 ![FSimulacion](https://http2.mlstatic.com/D_NQ_NP_891663-MCO45143406414_032021-O.jpg)
 
-## Carlos Andrés Escobar López
 Estuve trabajando principalmente con el fin de encontrar una manera de conectar las acciones de un cubo en Unity que respondiese a las señales que se les enviase, para esto probé este codigo proporcionado por el profesor: 
 using System.Collections;
 using System.Collections.Generic;
@@ -125,13 +124,11 @@ public class comm : MonoBehaviour
     }
 
 }
-#Prototipo #2
+## Prototipo #2
 con este logré hacer que el cubo cambiase de color al enviarle un mensaje a través de Hercules Terminal, sigo investigando la manera de enviar estos mensajes a través del celular.
 
 ![CuboRojo](Imagenes/CuboRojo.png)
 ![CuboRojo](Imagenes/CuboNegro.png)
-
-#Prototipo #3
 Para lograr que el cubo recibiera algo más allá de únicamente ordenes de ponerse en rojo o negro, usamos una aplicación llamda zig zim, con ella le enviamos la información de un array llamado “gravity” para esto modificamos el codigo, y con esto le pedimos que al recibir valores dentro de ciertos márgenes el cubo se voltease.
 
 [(Giro del cubo)](https://www.youtube.com/watch?v=OpWp2a5FJ08)
@@ -144,6 +141,8 @@ Ahora que se mueve hicimos un playerController, el cual tiene como función move
 Ya con esto funcionando tomamos, el cubo y lo reemplazamos por un asset de un vehículo, y un escenario de una pequeña ciudad el cual le agregó mucho movimiento, a demás de hacer posible que el vehículo se pueda encender, apagar, tener 5 cambios diferentes a demás de acelerar y desacelerar dependiendo de como utilices el botón destinado para ello
 
 [(Carro en movimiento)](https://youtu.be/uHbwmQEYOUw)
+
+## Prototipo #3
 
 
 Encontramos un error el cual no permitía comunicar el Leap y el teclado al tiempo, esta incompatibilidad se debía a que estábamos utilizando “(Input.GetKeyDown(KeyCode.W))” tanto en los botones del Leap como en los del teclado lo que generaba incompatibilidades dado a que al presionar el boton no se daba la acción esperada, introducimos dos cajas que hagan la función de botones, y así poder controlar los cambios del vehículo a partir del Leap.

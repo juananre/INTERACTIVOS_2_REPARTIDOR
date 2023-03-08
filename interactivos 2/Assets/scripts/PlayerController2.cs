@@ -6,6 +6,7 @@ using UnityEngine.UI;
 using UnityEngine.UIElements;
 using System.IO.Ports;
 using System;
+using System.Runtime.Remoting.Services;
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class PlayerController2 : MonoBehaviour
     public float speed = 0f;
     private Rigidbody rb;
     private bool acelerador = false;
+    private bool freno = false;
     private SerialPort _serialPort;
 
     private void Start()
@@ -56,19 +58,32 @@ public class PlayerController2 : MonoBehaviour
         if (_serialPort.BytesToRead > 0)
         {
             string response = _serialPort.ReadLine();
+            if (response == "frenoPressed")
+            {
+                freno = true;
+                Debug.Log("frenoPressed");
+            }
+            if (response == "frenoReleased")
+            {
+                freno = false;
+                Debug.Log("frenoReleased");
+            }
             if (response == "accPressed")
             {
                 acelerador = true;
-                Debug.Log("accPressed");
+             
             }
-            else if (response == "accReleased")
+            if (response == "accReleased")
             {
-                Debug.Log("accReleased");
                 acelerador = false;
+              
             }
+
+          
         }
 
         if ((speed < cambio)) { MasSpeed(); } else { MenosSpeed(); }
+        if ((speed > 0)) { Frenar(); }
         if (run == 0) MenosSpeed();
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
@@ -82,7 +97,11 @@ public class PlayerController2 : MonoBehaviour
         // if (run == 1) { if ((Input.GetKey(KeyCode.Space))) { speed += 0.02f; } else { MenosSpeed(); } }
         if (run == 1) { if (true == acelerador) { speed += 0.02f; } else { MenosSpeed(); } }
     }
-
+    
+    void Frenar()
+    {
+        if ( run ==1) { if (true == freno) { speed -= 0.1f; } }
+    }
     void MenosSpeed()
     {
         speed -= 0.02f;

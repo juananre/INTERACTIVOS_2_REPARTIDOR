@@ -183,7 +183,9 @@ El montaje esta planeado y tenemos los materiales en el taller listo para empeza
 El mapa ya tiene todas las vias que es el lugar donde estara el usuario disfrutando de la experiencia, falta sus edificios y decoraciones para que quede listo, y las mecanicas que usaremos para el mapa ya estan planteadas pero tenemos que implementarlas y probar; Y arreglamos el boton que se usara para los cambios del carro, que quede mejor para el leap.
 
 logramos haer que el auto acelerase y frenase con un arduino, el cual planeamos remplazar con pedales que simulen los de un auto.
-(video)
+[(Carro con arduino)](https://youtu.be/3Pfn4QPQpIo)
 logramos integrar el nuevo mapa  y el carrito en una sola escena.
-(foto)
+
+
+![Mapa](Imagenes/Imagen1.png)
 

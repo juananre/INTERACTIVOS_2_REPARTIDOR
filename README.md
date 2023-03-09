@@ -176,4 +176,9 @@ Se tomaron las medidas y planteamos lo materiales que se usaran para el montaje,
 
 El mapa esta en proceso, cerca de terminarse para empezar a implementar los anteriores avances para estar montando todo.
 
+## Avance 3.2
+
+El montaje esta planeado y tenemos los materiales en el taller listo para empezar a trabajarlo, es en madera ya que es lo mas economico y estable que podemos lograr.
+
+El mapa ya tiene todas las vias que es el lugar donde estara el usuario disfrutando de la experiencia, falta sus edificios y decoraciones para que quede listo, y las mecanicas que usaremos para el mapa ya estan planteadas pero tenemos que implementarlas y probar; Y arreglamos el boton que se usara para los cambios del carro, que quede mejor para el leap.
 

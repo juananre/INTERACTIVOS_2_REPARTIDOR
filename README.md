@@ -193,4 +193,5 @@ logramos integrar el nuevo mapa  y el carrito en una sola escena.
 
 se logró incluir pickUps al juego los cuales actualizan un contador de puntaje, con el que se espera poner mecanicas de juego en el juego.
 [(Puntos)](https://youtu.be/LEv6bhEyH9s)
+![Mapa](Imagenes/Imagen10.png)
 

@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 997
   m_ShowMode: 4
-  m_Title: Hierarchy
+  m_Title: Project
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 18
+  controlID: 83
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 455
     height: 947
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 19
+  controlID: 84
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 20
+  controlID: 85
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -346,13 +346,13 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/scripts
+    - Assets/sounds
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/scripts
+  - Assets/sounds
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\Users\User\Desktop\semestre 7\sis.interactivos 2\INTERACTIVOS_2_REPARTIDOR\interactivos
     2
@@ -360,9 +360,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 5e650000
-    m_LastClickedID: 25950
-    m_ExpandedIDs: 00000000fa640000fc640000fe64000000650000026500000465000006650000086500000c6500000e650000106500001265000000ca9a3b
+    m_SelectedIDs: b4620000
+    m_LastClickedID: 25268
+    m_ExpandedIDs: 0000000000620000026200000462000006620000086200000a6200000c6200000e62000010620000126200001462000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -390,7 +390,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000fa640000fc640000fe64000000650000026500000465000006650000086500000a6500000c6500000e6500001065000012650000
+    m_ExpandedIDs: 0000000000620000026200000462000006620000086200000a6200000c6200000e620000106200001262000014620000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -520,21 +520,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: e699ffff749dffffa89dffff9e9fffffaeaaffff76adffffbaaffffffeafffff82b2ffffcab2ffffd0b5ffff74c2ffff6cc6ffffb0c6ffffb0c8ffff1ccaffffaaccffff4acdffff96cdffffacd0ffff68dfffffacdfffffaaecffff16fbffff2a7c00000e7d0000f48400001a85000058850000de8a0000848e0000e08e0000
+      m_ExpandedIDs: 16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: calles
-        m_OriginalName: calles
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 36444
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -820,11 +820,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: -0.21725674, y: 0.37143353, z: -0.089836314, w: -0.89824235}
     speed: 2
-    m_Value: {x: -0.21724878, y: 0.37141994, z: -0.08983303, w: -0.89820945}
+    m_Value: {x: -0.21725674, y: 0.37143353, z: -0.089836314, w: -0.8982424}
   m_Size:
     m_Target: 1.485189
     speed: 2
-    m_Value: 1.4212334
+    m_Value: 1.485189
   m_Ortho:
     m_Target: 0
     speed: 2

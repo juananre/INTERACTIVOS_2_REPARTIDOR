@@ -189,3 +189,8 @@ logramos integrar el nuevo mapa  y el carrito en una sola escena.
 
 ![Mapa](Imagenes/Imagen1.png)
 
+## Prototipo #3
+
+se logró incluir pickUps al juego los cuales actualizan un contador de puntaje, con el que se espera poner mecanicas de juego en el juego.
+[(Carro con arduino)](https://youtu.be/LEv6bhEyH9s)
+

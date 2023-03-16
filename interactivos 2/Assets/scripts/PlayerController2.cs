@@ -17,7 +17,10 @@ public class PlayerController2 : MonoBehaviour
     private bool acelerador = false;
     private bool freno = false;
     private SerialPort _serialPort;
+ 
 
+  
+  
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -61,12 +64,12 @@ public class PlayerController2 : MonoBehaviour
             if (response == "frenoPressed")
             {
                 freno = true;
-                Debug.Log("frenoPressed");
+                
             }
             if (response == "frenoReleased")
             {
                 freno = false;
-                Debug.Log("frenoReleased");
+                
             }
             if (response == "accPressed")
             {
@@ -116,4 +119,5 @@ public class PlayerController2 : MonoBehaviour
         Debug.Log("si");
         cambio -= 2f;
     }
+
 }

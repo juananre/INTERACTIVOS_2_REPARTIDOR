@@ -203,3 +203,5 @@ los auidos fuero buscados en freesouds y seran editados en reperper.
 
 En este se logró agregar un cronometro el cual se planea utilizar despues en conjunto con los pickups para generar mecánicas de juego más interesantes, como que si no logra llevar las cosas a tiempo pierda.
 
+![Tiempo](Imagenes/imagen10.png)
+

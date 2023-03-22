@@ -199,3 +199,7 @@ se logró incluir pickUps al juego los cuales actualizan un contador de puntaje,
 
 los auidos fuero buscados en freesouds y seran editados en reperper.
 
+##Avance 4.1
+
+En este se logró agregar un cronometro el cual se planea utilizar despues en conjunto con los pickups para generar mecánicas de juego más interesantes, como que si no logra llevar las cosas a tiempo pierda.
+

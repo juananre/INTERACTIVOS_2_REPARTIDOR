@@ -199,9 +199,20 @@ se logró incluir pickUps al juego los cuales actualizan un contador de puntaje,
 
 los auidos fuero buscados en freesouds y seran editados en reperper.
 
-##Avance 4.1
+## Avance 4.1
 
 En este se logró agregar un cronometro el cual se planea utilizar despues en conjunto con los pickups para generar mecánicas de juego más interesantes, como que si no logra llevar las cosas a tiempo pierda.
 
 ![Tiempo](Imagenes/imagenTIempo.png)
+
+se editaron los audios es se subieron a unity pero no sé a implementado en el carro porque probando hay ciertos errores, estos se editaron en reaper donde se implementaron filtros para mejor escucha
+
+![image](https://user-images.githubusercontent.com/78058130/227093101-f2904de4-06f7-472a-93ee-17b475872e6e.png)
+
+![image](https://user-images.githubusercontent.com/78058130/227093871-bf18bff2-264e-4379-bfe4-909d3492e676.png)
+
+
+se diseñaron bocetos de los pedales pensando en las protoboars que se utilizaran, se habalon el equipo en clase, este boceto se hizo en photoshop 
+
+![pedales](https://user-images.githubusercontent.com/78058130/227093664-7578c3b2-f60b-423c-bb75-ed32123c4060.png)
 

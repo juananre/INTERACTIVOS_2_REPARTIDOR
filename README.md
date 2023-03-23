@@ -176,43 +176,4 @@ Se tomaron las medidas y planteamos lo materiales que se usaran para el montaje,
 
 El mapa esta en proceso, cerca de terminarse para empezar a implementar los anteriores avances para estar montando todo.
 
-## Avance 3.2
-
-El montaje esta planeado y tenemos los materiales en el taller listo para empezar a trabajarlo, es en madera ya que es lo mas economico y estable que podemos lograr.
-
-El mapa ya tiene todas las vias que es el lugar donde estara el usuario disfrutando de la experiencia, falta sus edificios y decoraciones para que quede listo, y las mecanicas que usaremos para el mapa ya estan planteadas pero tenemos que implementarlas y probar; Y arreglamos el boton que se usara para los cambios del carro, que quede mejor para el leap.
-
-logramos haer que el auto acelerase y frenase con un arduino, el cual planeamos remplazar con pedales que simulen los de un auto.
-[(Carro con arduino)](https://youtu.be/3Pfn4QPQpIo)
-logramos integrar el nuevo mapa  y el carrito en una sola escena.
-
-
-![Mapa](Imagenes/Imagen1.png)
-
-## Prototipo #3
-
-se logró incluir pickUps al juego los cuales actualizan un contador de puntaje, con el que se espera poner mecanicas de juego en el juego.
-[(Puntos)](https://youtu.be/LEv6bhEyH9s)
-
-![Mapa](Imagenes/Imagen10.png)
-
-
-los auidos fuero buscados en freesouds y seran editados en reperper.
-
-## Avance 4.1
-
-En este se logró agregar un cronometro el cual se planea utilizar despues en conjunto con los pickups para generar mecánicas de juego más interesantes, como que si no logra llevar las cosas a tiempo pierda.
-
-![Tiempo](Imagenes/imagenTIempo.png)
-
-se editaron los audios es se subieron a unity pero no sé a implementado en el carro porque probando hay ciertos errores, estos se editaron en reaper donde se implementaron filtros para mejor escucha
-
-![image](https://user-images.githubusercontent.com/78058130/227093101-f2904de4-06f7-472a-93ee-17b475872e6e.png)
-
-![image](https://user-images.githubusercontent.com/78058130/227093871-bf18bff2-264e-4379-bfe4-909d3492e676.png)
-
-
-se diseñaron bocetos de los pedales pensando en las protoboars que se utilizaran, se habalon el equipo en clase, este boceto se hizo en photoshop 
-
-![pedales](https://user-images.githubusercontent.com/78058130/227093664-7578c3b2-f60b-423c-bb75-ed32123c4060.png)
 

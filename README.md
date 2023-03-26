@@ -216,3 +216,9 @@ se diseñaron bocetos de los pedales pensando en las protoboars que se utilizara
 
 ![pedales](https://user-images.githubusercontent.com/78058130/227093664-7578c3b2-f60b-423c-bb75-ed32123c4060.png)
 
+## Avance 4.2
+
+se logró incluir Personas y objetos que siguen una trayectoria.
+
+[(PersonaCubo)](https://www.youtube.com/watch?v=ZD7wnSXbniI)
+

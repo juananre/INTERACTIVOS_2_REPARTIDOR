@@ -61,6 +61,7 @@ public class PlayerController2 : MonoBehaviour
             if (response == "frenoPressed")
             {
                 freno = true;
+                audio_freno.Play();
                 Debug.Log("frenoPressed");
             }
             if (response == "frenoReleased")
@@ -122,7 +123,6 @@ public class PlayerController2 : MonoBehaviour
             {
                 MenosSpeed();
                 audio_movimiento.Stop();
-                audio_freno.Play();
                 audio_neutro.PlayDelayed(1f);
             }
         }
@@ -134,10 +134,12 @@ public class PlayerController2 : MonoBehaviour
     }
     public void sube()
     {
+        //audio de cambio
         cambio += 2f;
     }
     public void baja()
     {
+        //audio de cambio
         cambio -= 2f;
     }
     public void encendido()

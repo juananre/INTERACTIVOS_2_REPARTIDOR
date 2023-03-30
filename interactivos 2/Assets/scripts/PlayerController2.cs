@@ -4,6 +4,9 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using System.IO.Ports;
+using System;
+using System.Runtime.Remoting.Services;
 
 public class PlayerController2 : MonoBehaviour
 {
@@ -11,6 +14,9 @@ public class PlayerController2 : MonoBehaviour
     public float cambio = 0f;
     public float speed = 0f;
     private Rigidbody rb;
+    private bool acelerador = false;
+    private bool freno = false;
+    private SerialPort _serialPort;
 
     [Header("Audios")]
     [SerializeField] AudioSource audio_Arranque;
@@ -20,12 +26,61 @@ public class PlayerController2 : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
-        
+        openSerialPort();
+
+
     }
+    private void openSerialPort()
+    {
+        try
+        {
+            _serialPort = new SerialPort();
+            _serialPort.PortName = "COM3";
+            _serialPort.BaudRate = 115200;
+            _serialPort.DtrEnable = true;
+            _serialPort.NewLine = "\n";
+            _serialPort.Open();
+            Debug.Log("Open Serial Port");
+
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+
+        }
+
+    }
+
     void Update()
     {
 
         transform.Translate(Vector3.down * Time.deltaTime * speed);
+        if (_serialPort.BytesToRead > 0)
+        {
+            string response = _serialPort.ReadLine();
+            if (response == "frenoPressed")
+            {
+                freno = true;
+                Debug.Log("frenoPressed");
+            }
+            if (response == "frenoReleased")
+            {
+                freno = false;
+                Debug.Log("frenoReleased");
+            }
+            if (response == "accPressed")
+            {
+                acelerador = true;
+
+            }
+            if (response == "accReleased")
+            {
+                acelerador = false;
+
+            }
+
+
+        }
 
 
         if (Input.GetKeyDown(KeyCode.C)) 
@@ -57,7 +112,7 @@ public class PlayerController2 : MonoBehaviour
     {
         if (run == 1)
         { 
-            if (Input.GetKey(KeyCode.Space)) 
+            if (true == acelerador) 
             { 
                 speed += 0.02f;
                 audio_neutro.Stop();
@@ -71,6 +126,7 @@ public class PlayerController2 : MonoBehaviour
                 audio_neutro.PlayDelayed(1f);
             }
         }
+       
     }
     void MenosSpeed()
     {

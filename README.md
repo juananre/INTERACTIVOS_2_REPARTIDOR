@@ -222,3 +222,6 @@ se logró incluir Personas y objetos que siguen una trayectoria.
 
 [(PersonaCubo)](https://www.youtube.com/watch?v=ZD7wnSXbniI)
 
+luego incluimos todo en un nuevo escenario con edificios y calles, y se agrego un primero vehiculo.
+[(Ciudad con auto)](https://youtu.be/b2xhdzx2LuI)
+

@@ -45,12 +45,10 @@ public class PlayerController2 : MonoBehaviour
     }
     public void sube()
     {
-        Debug.Log("si");
         cambio += 2f;
     }
     public void baja()
     {
-        Debug.Log("si");
         cambio -= 2f;
     }
 }

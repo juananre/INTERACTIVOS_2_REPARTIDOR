@@ -225,3 +225,4 @@ se logró incluir Personas y objetos que siguen una trayectoria.
 luego incluimos todo en un nuevo escenario con edificios y calles, y se agrego un primero vehiculo.
 [(Ciudad con auto)](https://youtu.be/b2xhdzx2LuI)
 
+![image](https://user-images.githubusercontent.com/78058130/228734423-4fc9f9a9-8e82-4a20-920d-9a65ad13ec33.png)

@@ -68,6 +68,7 @@ public class PlayerController2 : MonoBehaviour
                 MenosSpeed();
                 audio_movimiento.Stop();
                 audio_freno.Play();
+                audio_neutro.PlayDelayed(1f);
             }
         }
     }

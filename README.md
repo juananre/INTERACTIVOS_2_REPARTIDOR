@@ -396,3 +396,6 @@ en tema de audios se cambiaron gracias a los de una página
 http://www.sonidosmp3gratis.com/auto
 ![image](https://user-images.githubusercontent.com/78058130/231668892-54abf80b-448c-47c4-9604-6ac280730fae.png)
 
+Se agregaron más vehículos a la escena con sus respectivas rutas para darle más vida al mapa.
+
+![Mapa](Imagenes/wards.png)

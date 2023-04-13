@@ -380,3 +380,19 @@ public class PlayerController2 : MonoBehaviour
     }
  
 }
+
+## Avance 4.2
+
+Los pedales se imprimieron y se armaron con respeto a los materiales siendo un prototipo con materiales con respecto al presupuesto. 
+![image](https://user-images.githubusercontent.com/78058130/231668334-8c9213b7-eaeb-47a8-b06a-46bc2defbb00.png)
+![image](https://user-images.githubusercontent.com/78058130/231668362-c2223467-f44a-44f9-8d9a-2d6eba5f92e6.png)
+![image](https://user-images.githubusercontent.com/78058130/231668388-6b62134e-d039-4528-9c3a-38f32a65c82f.png)
+
+
+Una dificulta y a que a un es, es la resistencia de este con respecto al peso.
+![image](https://user-images.githubusercontent.com/78058130/231668443-a239cbf0-407e-4946-89d3-105d62f7431b.png)
+
+en tema de audios se cambiaron gracias a los de una página
+http://www.sonidosmp3gratis.com/auto
+![image](https://user-images.githubusercontent.com/78058130/231668892-54abf80b-448c-47c4-9604-6ac280730fae.png)
+

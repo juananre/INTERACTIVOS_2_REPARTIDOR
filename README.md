@@ -381,7 +381,7 @@ public class PlayerController2 : MonoBehaviour
  
 }
 
-## Avance 4.2
+## Avance 4.3
 
 Los pedales se imprimieron y se armaron con respeto a los materiales siendo un prototipo con materiales con respecto al presupuesto. 
 ![image](https://user-images.githubusercontent.com/78058130/231668334-8c9213b7-eaeb-47a8-b06a-46bc2defbb00.png)

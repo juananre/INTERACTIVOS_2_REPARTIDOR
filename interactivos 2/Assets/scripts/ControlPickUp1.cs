@@ -13,10 +13,7 @@ public class ControlPickUp1 : MonoBehaviour
 
     public void Start()
     {
-        if (contador_pickup1 == 3)
-        {
-            Debug.Log("Ha consegido 5 pickups");
-        }
+        
     }
     public int CantidadPickUpsRecolectados()
     {
@@ -25,11 +22,16 @@ public class ControlPickUp1 : MonoBehaviour
     }
     public void ActualizarPuntaje(int valor)
     {
+    
         contador_pickup1 += 1;
         ActualizarValorUI();
     }
     private void ActualizarValorUI()
     {
+        if (contador_pickup1 == 6)
+        {
+            Debug.Log("GANO");
+        }
         txt_contador_pickup1.text = "" + contador_pickup1;
     }
 }

@@ -79,6 +79,10 @@ public class PlayerController2 : MonoBehaviour
                 acelerador = false;
 
             }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                acelerador = true;
+            }
 
 
         }

@@ -9,7 +9,7 @@ public class ControlTiempo : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text txt_contador_Tiempo;
-    private int contador_Tiempo = 60;
+    private int contador_Tiempo = 600;
     private int i = 0;
     public static ControlTiempo Instance { get; private set; }
     [SerializeField] GameObject perdiste;
@@ -39,6 +39,7 @@ public class ControlTiempo : MonoBehaviour
     void TerminarTemporizador()
     {
           perdiste.SetActive(true);
+       
 
     }
     public void Awake()

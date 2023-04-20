@@ -425,3 +425,137 @@ Primero iniciamos construyendo la base, usando las bases de las estibas juntamos
 A estas 2 piezas como vigas horizontales se les puso una base de la madera sacada de las estibas, juntando 2 laminas de madera, una cuadrada y otra en forma de trapecio, pegados para formar la base completa.
 
 ![CorteBase](https://media.discordapp.net/attachments/1076728843009790045/1098698658423259217/DSC00169.jpg?width=833&height=625)
+
+## Prototipo 4
+
+[(Ciudad con auto)](https://youtu.be/GXqOuKOLTY0)
+
+ahora con todo junto podemos tener un pequeño primer prototipo jugable del juego, donde hay un tiempo maximo en el que tienes que recoger 6 paquetes, en caso de no recogerlos perderás, y si los logras recoger todos ganarás.
+
+Codigo del tiempo:
+
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using System;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
+
+public class ControlTiempo : MonoBehaviour
+{
+    [SerializeField]
+    private TMP_Text txt_contador_Tiempo;
+    private int contador_Tiempo = 600;
+    private int i = 0;
+    public static ControlTiempo Instance { get; private set; }
+    
+
+
+    void Start()
+    {
+        Invoke("TerminarTemporizador", 600f);
+
+        InvokeRepeating("ActualizarTiempo", 0f, 1f);
+    }
+
+    public void ActualizarTiempo()
+    {
+        contador_Tiempo -= 1;
+        ActualizarValorUI();
+    }
+    public void SumarTiempo(int valor)
+    {
+        contador_Tiempo += valor;
+        ActualizarValorUI();
+    }
+    public void ActualizarValorUI()
+    {
+        txt_contador_Tiempo.text = "" + contador_Tiempo;
+    }
+    void TerminarTemporizador()
+    {
+        SceneManager.LoadScene(2);
+
+    }
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; }
+    }
+}
+
+
+codigo pick ups:
+
+        control pick up:
+        using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using System;
+using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
+
+public class ControlPickUp1 : MonoBehaviour
+{
+    [SerializeField]
+    private TMP_Text txt_contador_pickup1;
+    public static int contador_pickup1;
+    
+
+    public void Start()
+    {
+        
+    }
+    public int CantidadPickUpsRecolectados()
+    {
+
+        return contador_pickup1;
+    }
+    public void ActualizarPuntaje(int valor)
+    {
+    
+        contador_pickup1 += 1;
+        ActualizarValorUI();
+    }
+    private void ActualizarValorUI()
+    {
+        if (contador_pickup1 == 6)
+        {
+            SceneManager.LoadScene(3);
+        }
+        txt_contador_pickup1.text = "" + contador_pickup1;
+    }
+}
+    control puntaje:
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+
+public class ControlPuntaje : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject ui_Puntaje;
+    private ControlPickUp1 controlPickup1;
+    public static ControlPuntaje Instance { get; private set; }
+
+    public void Start()
+    {
+        controlPickup1 = ui_Puntaje.GetComponent<ControlPickUp1>();
+              
+    }
+    public void ActualizarPuntaje(int valorPickUp1)
+    {
+        controlPickup1.ActualizarPuntaje(valorPickUp1);
+    }
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; }
+    }
+    
+}
+
+

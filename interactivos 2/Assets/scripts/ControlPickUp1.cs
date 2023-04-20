@@ -4,13 +4,15 @@ using UnityEngine;
 using TMPro;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
 
 public class ControlPickUp1 : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text txt_contador_pickup1;
     public static int contador_pickup1;
-    [SerializeField] GameObject ganaste;
+    
 
     public void Start()
     {
@@ -31,7 +33,7 @@ public class ControlPickUp1 : MonoBehaviour
     {
         if (contador_pickup1 == 6)
         {
-            ganaste.SetActive(true);
+            SceneManager.LoadScene(3);
         }
         txt_contador_pickup1.text = "" + contador_pickup1;
     }

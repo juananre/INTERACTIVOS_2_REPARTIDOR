@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 using System;
 using Unity.VisualScripting;
+using UnityEngine.SceneManagement;
+
 
 public class ControlTiempo : MonoBehaviour
 {
@@ -12,7 +14,7 @@ public class ControlTiempo : MonoBehaviour
     private int contador_Tiempo = 600;
     private int i = 0;
     public static ControlTiempo Instance { get; private set; }
-    [SerializeField] GameObject perdiste;
+    
 
 
     void Start()
@@ -38,8 +40,7 @@ public class ControlTiempo : MonoBehaviour
     }
     void TerminarTemporizador()
     {
-          perdiste.SetActive(true);
-       
+        SceneManager.LoadScene(2);
 
     }
     public void Awake()

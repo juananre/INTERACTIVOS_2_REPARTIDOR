@@ -399,3 +399,29 @@ http://www.sonidosmp3gratis.com/auto
 Se agregaron más vehículos a la escena con sus respectivas rutas para darle más vida al mapa.
 
 ![Mapa](Imagenes/wards.png)
+
+## Montaje
+
+El montaje para el proyecto fue proyectado para que tenga pedales, volante, lugar para el leap y pantalla para mostrar la experiencia. Primero se investigo las medidas de las personas en los asientos de los vehiculos de carreras como la formula 1, basado en esto se desarrollaron unos planos como idea principal de como seria el montaje.
+
+![Planos](https://media.discordapp.net/attachments/1076728843009790045/1080943698352808027/IMG-20230302-WA0007.jpg)
+![Planos](https://media.discordapp.net/attachments/1076728843009790045/1080943782272454747/IMG-20230302-WA0008.jpg?width=924&height=625)
+(Estos planos eran una idea, no es como quedo el montaje al finalizar ya que tuvimos ciertos cambios)
+
+Para iniciar el montaje decidimos hacerlo en madera, ya que es mas estable, facil de trabajar y mas facil de conseguir el material. Con un contacto pudimos contactar con la sede principal del el colombiano y logramos conseguir unas estibas que iban a tirar, asi reciclando el material y bajando en mas de un 90% el coste del montaje. Fueron recogidas en vehiculo y llevadas a un garaje en el que se trabajaria el material. 
+
+Alli empezamos a desmontar las estibas una por una para sacar todo el material que necesitariamos, demorando unas 8 horas la desmontada de este de aqui empezamos.
+
+![Estibas](https://media.discordapp.net/attachments/1076728843009790045/1098696674362265711/20230324_180329.jpg?width=281&height=624)
+![Estibas](https://media.discordapp.net/attachments/1076728843009790045/1098696675096268880/20230326_175823.jpg?width=281&height=624)
+![Material](https://media.discordapp.net/attachments/1076728843009790045/1098696675406651433/20230326_175827.jpg?width=281&height=624)
+
+Primero iniciamos construyendo la base, usando las bases de las estibas juntamos un par a cada lado y las unimos con un taco entre las piezas como un lego.
+
+![UnionDePiezas](https://media.discordapp.net/attachments/1076728843009790045/1098698579691962508/DSC00158.jpg?width=833&height=625)
+![Pega](https://media.discordapp.net/attachments/1076728843009790045/1098698581898182706/DSC00165.jpg?width=833&height=625)
+![Unidos](https://media.discordapp.net/attachments/1076728843009790045/1098698580023316581/DSC00159.jpg?width=833&height=625)
+
+A estas 2 piezas como vigas horizontales se les puso una base de la madera sacada de las estibas, juntando 2 laminas de madera, una cuadrada y otra en forma de trapecio, pegados para formar la base completa.
+
+![CorteBase](https://media.discordapp.net/attachments/1076728843009790045/1098698658423259217/DSC00169.jpg?width=833&height=625)

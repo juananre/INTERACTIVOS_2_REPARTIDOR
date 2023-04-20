@@ -428,7 +428,7 @@ A estas 2 piezas como vigas horizontales se les puso una base de la madera sacad
 
 ## Prototipo 4
 
-[(Ciudad con auto)](https://youtu.be/GXqOuKOLTY0)
+[(Prototipo 4)](https://youtu.be/GXqOuKOLTY0)
 
 ahora con todo junto podemos tener un pequeño primer prototipo jugable del juego, donde hay un tiempo maximo en el que tienes que recoger 6 paquetes, en caso de no recogerlos perderás, y si los logras recoger todos ganarás.
 

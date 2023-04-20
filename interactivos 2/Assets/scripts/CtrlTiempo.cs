@@ -5,11 +5,11 @@ using TMPro;
 
 public class CtrlTiempo : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text txt_contador_Tiempo;
+    [SerializeField] private TMP_Text txt_contador_Tiempo;
     private int contador_Tiempo = 600;
     private int i = 0;
     public static CtrlTiempo Instance { get; private set; }
+    [SerializeField] GameObject perdiste;
 
 
     void Start()
@@ -35,7 +35,8 @@ public class CtrlTiempo : MonoBehaviour
     }
     void TerminarTemporizador()
     {
-        Debug.Log("Se termino el tiempo");
+        
+        perdiste.SetActive(true);
 
     }
     public void Awake()

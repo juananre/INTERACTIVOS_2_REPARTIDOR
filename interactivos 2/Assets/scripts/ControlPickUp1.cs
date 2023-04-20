@@ -10,6 +10,7 @@ public class ControlPickUp1 : MonoBehaviour
     [SerializeField]
     private TMP_Text txt_contador_pickup1;
     public static int contador_pickup1;
+    [SerializeField] GameObject ganaste;
 
     public void Start()
     {
@@ -30,7 +31,7 @@ public class ControlPickUp1 : MonoBehaviour
     {
         if (contador_pickup1 == 6)
         {
-            Debug.Log("GANO");
+            ganaste.SetActive(true);
         }
         txt_contador_pickup1.text = "" + contador_pickup1;
     }

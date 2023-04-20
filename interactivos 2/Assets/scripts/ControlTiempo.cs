@@ -12,6 +12,7 @@ public class ControlTiempo : MonoBehaviour
     private int contador_Tiempo = 60;
     private int i = 0;
     public static ControlTiempo Instance { get; private set; }
+    [SerializeField] GameObject perdiste;
 
 
     void Start()
@@ -37,7 +38,7 @@ public class ControlTiempo : MonoBehaviour
     }
     void TerminarTemporizador()
     {
-        Debug.Log("Se termino el tiempo");
+          perdiste.SetActive(true);
 
     }
     public void Awake()

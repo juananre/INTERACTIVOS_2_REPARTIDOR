@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1366
     height: 677
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Inspector
   m_RootView: {fileID: 6}
   m_MinSize: {x: 875, y: 350}
   m_MaxSize: {x: 10000, y: 10000}
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 200}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 33
+  controlID: 105
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -223,7 +223,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 200}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 34
+  controlID: 19
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 35
+  controlID: 20
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -359,9 +359,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 213}
-    m_SelectedIDs: d09f0100
-    m_LastClickedID: 106448
-    m_ExpandedIDs: 0000000068aa0000769f010000ca9a3bffffff7f
+    m_SelectedIDs: a2aa0000
+    m_LastClickedID: 43682
+    m_ExpandedIDs: 0000000056aa000076aa000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -389,7 +389,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000068aa0000
+    m_ExpandedIDs: 0000000056aa0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -416,7 +416,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -517,23 +517,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
-      m_LastClickedID: 0
-      m_ExpandedIDs: 78a4fbff5212fcfffa7efcff9459fdff74c8fdffcc33feff549efeff100cffff4079ffff487affff1cfbfffff4ffffff806500003c6800002627020042270200dab9020024d402004ae50200
+      m_SelectedIDs: 6a6c0000
+      m_LastClickedID: 27754
+      m_ExpandedIDs: 1cfbffff706500006a6c0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Canvas
-        m_OriginalName: Canvas
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 25984
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -819,7 +819,7 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.1323446, y: 0.44216114, z: -0.06614789, w: 0.8846486}
     speed: 2
-    m_Value: {x: 0.13234459, y: 0.44216108, z: -0.066147886, w: 0.8846485}
+    m_Value: {x: 0.13234462, y: 0.44216117, z: -0.06614789, w: 0.8846486}
   m_Size:
     m_Target: 0.992173
     speed: 2
@@ -907,7 +907,7 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
     m_HSlider: 0
-    m_VSlider: 0
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -920,20 +920,20 @@ MonoBehaviour:
       y: 21
       width: 911
       height: 407
-    m_Scale: {x: 0.37685186, y: 0.37685186}
-    m_Translation: {x: 455.5, y: 203.5}
+    m_Scale: {x: 0.39629626, y: 0.39629626}
+    m_Translation: {x: 455.49997, y: 203.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -1208.6978
-      y: -540
-      width: 2417.3955
-      height: 1080
+      x: -1149.3926
+      y: -513.5047
+      width: 2298.7852
+      height: 1027.0094
     m_MinimalGUI: 1
-  m_defaultScale: 0.37685186
+  m_defaultScale: 0.3962963
   m_LastWindowPixelSize: {x: 911, y: 428}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1

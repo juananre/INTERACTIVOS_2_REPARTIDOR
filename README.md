@@ -562,21 +562,12 @@ public class ControlPuntaje : MonoBehaviour
 
 se corrigio el contador de tiempo de segundos a minutos 
 
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using TMPro;
-using System;
-using Unity.VisualScripting;
-using UnityEngine.SceneManagement;
-
 
 public class ControlTiempo : MonoBehaviour
 {
     [SerializeField] TMP_Text txt_contador_Tiempo;
     [SerializeField] int cambio_estado = 0;
     [SerializeField] int min, seg;
-
     private float restante;
 
     void Start()

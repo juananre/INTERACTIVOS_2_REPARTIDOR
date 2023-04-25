@@ -9,42 +9,37 @@ using UnityEngine.SceneManagement;
 
 public class ControlTiempo : MonoBehaviour
 {
-    [SerializeField]
-    private TMP_Text txt_contador_Tiempo;
-    private int contador_Tiempo = 600;
-    private int i = 0;
-    public static ControlTiempo Instance { get; private set; }
-    
+    [SerializeField] TMP_Text txt_contador_Tiempo;
+    [SerializeField] int cambio_estado = 0;
+    [SerializeField] int min, seg;
 
+    private float restante;
 
     void Start()
     {
-        Invoke("TerminarTemporizador", 600f);
 
-        InvokeRepeating("ActualizarTiempo", 0f, 1f);
-    }
-
-    public void ActualizarTiempo()
-    {
-        contador_Tiempo -= 1;
-        ActualizarValorUI();
-    }
-    public void SumarTiempo(int valor)
-    {
-        contador_Tiempo += valor;
-        ActualizarValorUI();
-    }
-    public void ActualizarValorUI()
-    {
-        txt_contador_Tiempo.text = "" + contador_Tiempo;
     }
     void TerminarTemporizador()
     {
         SceneManager.LoadScene(2);
 
     }
+    void Update()
+    {
+
+        restante -= Time.deltaTime;
+        int tempmin = Mathf.FloorToInt(restante / 60);
+        int tempseg = Mathf.FloorToInt(restante % 60);
+        txt_contador_Tiempo.text = string.Format("{00:00}:{01:00}", tempmin, tempseg);
+
+        if (Input.GetKeyDown(KeyCode.Space) || restante <= 1)
+        {
+            TerminarTemporizador();
+        }
+
+    }
     public void Awake()
     {
-        if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; }
+        restante = (min * 60) + seg;
     }
 }

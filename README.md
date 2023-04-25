@@ -598,3 +598,10 @@ public class ControlTiempo : MonoBehaviour
         restante = (min * 60) + seg;
     }
 }
+
+
+se llevo el montaja a casa del profesor juan franco quien nos ayudo al ubucar el montaje del carro
+
+![image](https://user-images.githubusercontent.com/78058130/234173162-c8cbf75e-20cb-4d7a-88c3-6409597cf911.png)
+![image](https://user-images.githubusercontent.com/78058130/234173190-651764c7-fd42-43f5-801f-cdd48a57b0d6.png)
+

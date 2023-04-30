@@ -18,6 +18,7 @@ public class comm : MonoBehaviour
     private IPEndPoint receiveEndPoint;
     public string ip = "127.0.0.1";
     public int receivePort = 64;
+  
     private bool isInitialized;
     private Queue receiveQueue;
     public GameObject cube;

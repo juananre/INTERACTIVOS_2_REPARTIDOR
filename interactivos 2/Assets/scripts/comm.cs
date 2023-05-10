@@ -199,7 +199,32 @@ public class comm : MonoBehaviour
         {
             string mastermenssage;
             mastermenssage = (string)receiveMasterQueue.Dequeue();
-            Debug.Log(mastermenssage);
+            //Debug.Log(mastermenssage);
+            int intMasterMenssage = int.Parse(mastermenssage);
+
+            switch (intMasterMenssage)
+            {
+                case 1:
+                    Debug.Log("agregue uno en la posición x");
+                    break;
+                case 2:
+                    Debug.Log("agregue uno en la posición x");
+                    break;
+                case 3:
+                    Debug.Log("agregue uno en la posición x");
+                    break;
+                case 4:
+                    Debug.Log("agregue uno en la posición x");
+                    break;
+                case 5:
+                    Debug.Log("agregue uno en la posición x");
+                    break;
+                case 6:
+                    Debug.Log("agregue uno en la posición x");
+                    break;
+          
+
+            }
         }
     }
 

@@ -11,7 +11,7 @@ public class ControlPickUp1 : MonoBehaviour
 {
     [SerializeField]
     private TMP_Text txt_contador_pickup1;
-    public static int contador_pickup1;
+    public static int contador_pickup1 = 6;
     
 
     public void Start()
@@ -26,12 +26,12 @@ public class ControlPickUp1 : MonoBehaviour
     public void ActualizarPuntaje(int valor)
     {
     
-        contador_pickup1 += 1;
+        contador_pickup1 -= 1;
         ActualizarValorUI();
     }
     private void ActualizarValorUI()
     {
-        if (contador_pickup1 == 6)
+        if (contador_pickup1 == 0)
         {
             SceneManager.LoadScene(3);
         }

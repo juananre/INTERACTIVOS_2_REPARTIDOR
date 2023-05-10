@@ -257,6 +257,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4335957602423502470, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
+      propertyPath: valorPickUp1
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502471, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -4204,6 +4208,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4335957602423502470, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
+      propertyPath: valorPickUp1
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502471, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -7716,6 +7724,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502468, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335957602423502470, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
+      propertyPath: valorPickUp1
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502471, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
@@ -21330,7 +21342,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 6
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -29359,6 +29371,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4335957602423502470, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
+      propertyPath: valorPickUp1
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502471, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -36941,6 +36957,10 @@ PrefabInstance:
       propertyPath: m_Radius
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 4335957602423502470, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
+      propertyPath: valorPickUp1
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502471, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_RootOrder
       value: 3
@@ -37924,6 +37944,10 @@ PrefabInstance:
     - target: {fileID: 4335957602423502468, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_Radius
       value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4335957602423502470, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
+      propertyPath: valorPickUp1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4335957602423502471, guid: 79ff1147af3e7f341b2cf52f0e0d9988, type: 3}
       propertyPath: m_RootOrder

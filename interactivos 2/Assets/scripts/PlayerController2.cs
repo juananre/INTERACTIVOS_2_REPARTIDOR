@@ -10,7 +10,7 @@ using System.Runtime.Remoting.Services;
 
 public class PlayerController2 : MonoBehaviour
 {
-    public byte run;
+    public byte run = 1;
     public float cambio = 0f;
     public float speed = 0f;
     private Rigidbody rb;

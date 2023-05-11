@@ -12,6 +12,7 @@ public class ControlPickUp1 : MonoBehaviour
     [SerializeField]
     private TMP_Text txt_contador_pickup1;
     public static int contador_pickup1 = 6;
+
     
 
     public void Start()
@@ -25,9 +26,22 @@ public class ControlPickUp1 : MonoBehaviour
     }
     public void ActualizarPuntaje(int valor)
     {
-    
-        contador_pickup1 -= 1;
-        ActualizarValorUI();
+        
+            contador_pickup1 -= valor;
+            ActualizarValorUI();
+        
+           
+    }
+    public void RestablecerPuntaje()
+    {
+
+        if (contador_pickup1 < 6)
+        {
+            Debug.Log("AYAYAY");
+            contador_pickup1 += 1;
+            ActualizarValorUI();
+        }
+       
     }
     private void ActualizarValorUI()
     {

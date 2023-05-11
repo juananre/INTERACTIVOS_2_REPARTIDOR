@@ -19,6 +19,10 @@ public class ControlPuntaje : MonoBehaviour
     {
         controlPickup1.ActualizarPuntaje(valorPickUp1);
     }
+    public void RestablecerPuntaje()
+    {
+        controlPickup1.RestablecerPuntaje();
+    }
     public void Awake()
     {
         if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; }

@@ -11,6 +11,13 @@ using UnityEngine;
 
 public class comm : MonoBehaviour
 {
+    public GameObject pickup1;
+    public GameObject pickup2;
+    public GameObject pickup3; 
+    public GameObject pickup4;
+    public GameObject pickup5;
+    public GameObject pickup6;
+
     static int incinacion;
     private static comm instance;
     // zigsim
@@ -205,22 +212,46 @@ public class comm : MonoBehaviour
             switch (intMasterMenssage)
             {
                 case 1:
-                    Debug.Log("agregue uno en la posición x");
+                    if (pickup1.activeSelf == false)
+                    {
+                        ControlPuntaje.Instance.RestablecerPuntaje();
+                        pickup1.SetActive(true);
+                    }
                     break;
                 case 2:
-                    Debug.Log("agregue uno en la posición x");
+                    if (pickup2.activeSelf == false)
+                    {
+                        ControlPuntaje.Instance.RestablecerPuntaje();
+                        pickup2.SetActive(true);
+                    }
                     break;
                 case 3:
-                    Debug.Log("agregue uno en la posición x");
+                    if (pickup3.activeSelf == false)
+                    {
+                        ControlPuntaje.Instance.RestablecerPuntaje();
+                        pickup3.SetActive(true);
+                    }
                     break;
                 case 4:
-                    Debug.Log("agregue uno en la posición x");
+                    if (pickup4.activeSelf == false)
+                    {
+                        ControlPuntaje.Instance.RestablecerPuntaje();
+                        pickup4.SetActive(true);
+                    }
                     break;
                 case 5:
-                    Debug.Log("agregue uno en la posición x");
+                    if (pickup5.activeSelf == false)
+                    {
+                        ControlPuntaje.Instance.RestablecerPuntaje();
+                        pickup5.SetActive(true);
+                    }
                     break;
                 case 6:
-                    Debug.Log("agregue uno en la posición x");
+                    if (pickup6.activeSelf == false)
+                    {
+                        ControlPuntaje.Instance.RestablecerPuntaje();
+                        pickup6.SetActive(true);
+                    }
                     break;
           
 

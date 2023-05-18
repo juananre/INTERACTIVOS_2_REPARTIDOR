@@ -9,16 +9,18 @@ Somos el equipo Triple A y queremos desarrollar 'LOS REPARTIDORES', una experien
 
 ## Tutorial
 
-### Hramientas a utilizar.
+### 1. Heramientas a utilizar.
 
-### Programación con celular.
+![logos](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/47cfb173-7c04-463d-af92-04c222cb8781)
 
-### Programación con Arduino.
+### 2. Mecánicas.
 
-### Programación con leap.
+### 3. Programación con celular.
 
-### Montaje.
+### 4. Programación con Arduino.
 
-### Mecánicas.
+### 5. Programación con leap.
 
-### Master.
+### 6. Montaje.
+
+### 7. Master.

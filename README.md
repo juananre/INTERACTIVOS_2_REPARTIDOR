@@ -11,7 +11,7 @@ Somos el equipo Triple A y queremos desarrollar 'LOS REPARTIDORES', una experien
 
 ### 1. Heramientas a utilizar.
 
-![logos](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/47cfb173-7c04-463d-af92-04c222cb8781)
+![logos](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/e7908bfe-baed-4f16-8183-0e1eef522341)
 
 ### 2. Mecánicas.
 

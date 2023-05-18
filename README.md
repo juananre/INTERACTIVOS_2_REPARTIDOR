@@ -1,5 +1,5 @@
 ## Los Repartidores
 
 
-![para vane](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/00b8175f-becd-4ff6-8094-e3200c50a34a)
+![baner_sistemas](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/f0658bf7-619f-4dbc-8c07-b496cb326d18)
 

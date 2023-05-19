@@ -326,4 +326,184 @@ Luego para la implementación del arduino se modificó el player controller con 
 
 ### 6. Mecánicas.
 
+Se implementaron los pickups los cuales debes pisar para “entregar todos los paquetes” si logras entregarlos todos antes de que el tiempo termine ganarás. 
+
+![mapa con picap](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/c16f9487-9ecd-466b-baea-2b71d64dfcaf)
+
+Estos serían los códigos que utilizamos con los pick-ups son los códigos usados para los pick-ups 
+
+Este para cada PIck up:
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+    public class PickUp1 : MonoBehaviour
+    {
+
+    [SerializeField]
+    private int valorPickUp1 = 1;
+    public GameObject pickup;
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            ControlPuntaje.Instance.ActualizarPuntaje(valorPickUp1);
+            gameObject.SetActive(false);
+            
+        }
+       
+    }
+    }
+
+Este para el control puntaje:
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+
+
+    public class ControlPuntaje : MonoBehaviour
+    {
+    [SerializeField]
+    private GameObject ui_Puntaje;
+    private ControlPickUp1 controlPickup1;
+    public static ControlPuntaje Instance { get; private set; }
+
+    public void Start()
+    {
+        controlPickup1 = ui_Puntaje.GetComponent<ControlPickUp1>();
+              
+    }
+    public void ActualizarPuntaje(int valorPickUp1)
+    {
+        controlPickup1.ActualizarPuntaje(valorPickUp1);
+    }
+    public void RestablecerPuntaje()
+    {
+        controlPickup1.RestablecerPuntaje();
+    }
+    public void Awake()
+    {
+        if (Instance != null && Instance != this) { Destroy(this); } else { Instance = this; }
+    }
+    
+    }
+
+Este para el Control pick up:
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using TMPro;
+    using System;
+    using Unity.VisualScripting;
+    using UnityEngine.SceneManagement;
+
+
+    public class ControlPickUp1 : MonoBehaviour
+    {
+    [SerializeField]
+    private TMP_Text txt_contador_pickup1;
+    public static int contador_pickup1 = 6;
+
+    
+
+    public void Start()
+    {
+        
+    }
+    public int CantidadPickUpsRecolectados()
+    {
+
+        return contador_pickup1;
+    }
+    public void ActualizarPuntaje(int valor)
+    {
+        
+            contador_pickup1 -= valor;
+            ActualizarValorUI();
+        
+           
+    }
+    public void RestablecerPuntaje()
+    {
+
+        if (contador_pickup1 < 6)
+        {
+            Debug.Log("AYAYAY");
+            contador_pickup1 += 1;
+            ActualizarValorUI();
+        }
+       
+    }
+    private void ActualizarValorUI()
+    {
+        if (contador_pickup1 == 0)
+        {
+            SceneManager.LoadScene(3);
+        }
+        txt_contador_pickup1.text = "" + contador_pickup1;
+    }
+    }
+    
+Así logramos que al tomar cada pickup se reste un punto en la interfaz y si los toma todos ganará. Añadimos también un contador de tiempo, si no completa los envios a tiempos el usuario perderá
+ 
+![a](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/d0106d12-e802-40db-979a-842e4402f5cb)
+
+Este es el codigo del tiempo que usamos:
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using UnityEngine;
+    using TMPro;
+    using System;
+    using Unity.VisualScripting;
+    using UnityEngine.SceneManagement;
+
+  
+    public class ControlTiempo : MonoBehaviour
+    {
+    [SerializeField] TMP_Text txt_contador_Tiempo;
+    [SerializeField] int cambio_estado = 0;
+    [SerializeField] int min, seg;
+
+    private float restante;
+
+    void Start()
+    {
+
+    }
+    void TerminarTemporizador()
+    {
+        SceneManager.LoadScene(2);
+
+    }
+    void Update()
+    {
+
+        restante -= Time.deltaTime;
+        int tempmin = Mathf.FloorToInt(restante / 60);
+        int tempseg = Mathf.FloorToInt(restante % 60);
+        txt_contador_Tiempo.text = string.Format("{00:00}:{01:00}", tempmin, tempseg);
+
+        if (Input.GetKeyDown(KeyCode.Space) || restante <= 1)
+        {
+            TerminarTemporizador();
+        }
+
+    }
+    public void Awake()
+    {
+        restante = (min * 60) + seg;
+    }
+    
+    }
+   
+Por último agregamos un minimapa que se actualiza en tiempo real, que muestre el progreso en los puntos de llegada y entidades que recorren todo el mapa.
+
+![minimapa y entidades](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/a05e609d-7234-4072-b5df-46d117b93403)
+
+[Y asi nos quedo el mapa](https://www.youtube.com/watch?v=b2xhdzx2LuI)
+
 ### 7. Master.

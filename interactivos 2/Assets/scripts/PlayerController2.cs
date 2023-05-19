@@ -138,12 +138,12 @@ public class PlayerController2 : MonoBehaviour
     }
     public void sube()
     {
-        //audio de cambio
+        //sube la velocidad con el leap
         cambio += 2f;
     }
     public void baja()
     {
-        //audio de cambio
+        //baja la velocidad con el leap
         cambio -= 2f;
     }
     public void encendido()

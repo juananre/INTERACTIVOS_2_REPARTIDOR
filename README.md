@@ -323,7 +323,17 @@ Luego para la implementación del arduino se modificó el player controller con 
 
 ### 4. Programación con leap.
 
+Ahora para la implementación del leap serán para los cambios del carro. Lo primero que haremos es comprar el dispositivo [leap motion](https://www.amazon.com/-/es/dp/B07KX22XQ9/ref=sr_1_1?keywords=leap+motion&qid=1684465039&sprefix=leap+mo%2Caps%2C147&sr=8-1) y descargar la aplicación [leap](https://developer.leapmotion.com/tracking-software-download) de la página oficial creando una cuenta en esta, después descargamos los plugins de [Unity](https://developer.leapmotion.com/unity) (descargar la versión de preferencia pero de la 5.8.0 en adelante). 
 
+La aplicación o drivers del leap se instalan de manera normal (aceptar todo del instalador). Los plugins se descarga un .zid (lo descomprimimos en una carpeta) todos esos archivos descomprimidos los arrastraremos a Unity directamente e instalaremos todos.
+
+Una vez instalados en el “hierarchy” de Unity daremos clic derecho y si está todo bien en la parte inferior de las opciones aparecerá una opción “ultra leap” dentro de esta “Non-XR” y “Service Provider (Desktop)” les damos clic a este, luego agregamos las manos repitiendo los pasos solo que en vez de non-xr vamos a Hans y pondremos las que necesitamos (recomendamos low poly hans).
+
+![noti](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/9e3708d4-a483-4a0f-b204-819a1777b30f)
+
+Estos objetos los pondremos dentro de un objeto vacío (llámalo como quieras), en el inspector del objeto low poly hands agregamos el script “Interaction manager”, en las 2 manos agregaremos el script “Interaction Hands” definiendo la mano izquierda y derecha por último activamos los dedos faltantes.
+
+![hands](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/e20d269a-4cab-4067-a1fc-a12e558dc8b9)
 
 ### 5. Montaje.
 

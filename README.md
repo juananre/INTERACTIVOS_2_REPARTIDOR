@@ -335,6 +335,177 @@ Estos objetos los pondremos dentro de un objeto vacío (llámalo como quieras), 
 
 ![hands](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/e20d269a-4cab-4067-a1fc-a12e558dc8b9)
 
+Una vez hecho esto pondremos los botones en una posición cómoda para el usuario. En estos botones pondremos el script “Interaction Button” que nos permite convertir todo en un botón que servirán para cambiar las velocidades(Importante Recordar, tener rigidbody y colider). 
+
+![botones](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/2cfec0e4-661f-4930-b611-730ea40a6026)
+
+Para que el botón haga algo le daremos “+” en la opción “On Press()”(acciones que realizaremos mientras esté presionado) y agregamos el objeto que tenga el script con el método que vayamos a utilizar para que haga la opción, en este caso el cambio de velocidad del carro, luego buscamos el método y lo señalamos.
+
+![botonconObjeto](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/48d91caa-04b5-4e68-a0e0-342078c39d23)
+
+Este sería el código que utilizamos para los botones:
+
+    using System.Collections;
+    using System.Collections.Generic;
+    using System.Xml.Serialization;
+    using UnityEngine;
+    using UnityEngine.UI;
+    using UnityEngine.UIElements;
+    using System.IO.Ports;
+    using System;
+    using System.Runtime.Remoting.Services;
+
+    public class PlayerController2 : MonoBehaviour
+    {
+    public byte run = 1;
+    public float cambio = 0f;
+    public float speed = 0f;
+    private Rigidbody rb;
+    private bool acelerador = false;
+    private bool freno = false;
+    private SerialPort _serialPort;
+
+    [Header("Audios")]
+    [SerializeField] AudioSource audio_Arranque;
+    [SerializeField] AudioSource audio_neutro;
+    [SerializeField] AudioSource audio_movimiento;
+    [SerializeField] AudioSource audio_freno;
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+        openSerialPort();
+
+
+    }
+    private void openSerialPort()
+    {
+        try
+        {
+            _serialPort = new SerialPort();
+            _serialPort.PortName = "COM3";
+            _serialPort.BaudRate = 115200;
+            _serialPort.DtrEnable = true;
+            _serialPort.NewLine = "\n";
+            _serialPort.Open();
+            Debug.Log("Open Serial Port");
+
+        }
+        catch (Exception e)
+        {
+            Debug.Log(e);
+
+        }
+
+    }
+
+    void Update()
+    {
+
+        transform.Translate(Vector3.down * Time.deltaTime * speed);
+        if (_serialPort.BytesToRead > 0)
+        {
+            string response = _serialPort.ReadLine();
+            if (response == "frenoPressed")
+            {
+                freno = true;
+                audio_freno.Play();
+                Debug.Log("frenoPressed");
+            }
+            if (response == "frenoReleased")
+            {
+                freno = false;
+                Debug.Log("frenoReleased");
+            }
+            if (response == "accPressed")
+            {
+                acelerador = true;
+
+            }
+            if (response == "accReleased")
+            {
+                acelerador = false;
+
+            }
+            if (Input.GetKey(KeyCode.Space))
+            {
+                acelerador = true;
+            }
+
+
+        }
+
+
+        if (Input.GetKeyDown(KeyCode.C)) 
+        {
+            run = 1;
+            encendido();
+        }
+        if (Input.GetKeyDown(KeyCode.V)) 
+        {
+            run = 0; 
+        }
+        if ((speed < cambio)) 
+        { 
+            MasSpeed(); 
+        } 
+        else 
+        {
+            MenosSpeed(); 
+        }
+        if (run == 0) MenosSpeed();
+        if (speed <= 0) speed = 0;
+        if (cambio <= 0) cambio = 0;
+        if (cambio >= 12) cambio = 12;
+        if (speed - cambio <= -6) { MenosSpeed(); }
+
+
+    }
+    void MasSpeed()
+    {
+        if (run == 1)
+        { 
+            if (true == acelerador) 
+            { 
+                speed += 0.02f;
+                audio_neutro.Stop();
+                audio_movimiento.Play();
+            }
+            else 
+            {
+                MenosSpeed();
+                audio_movimiento.Stop();
+                audio_neutro.PlayDelayed(1f);
+            }
+        }
+       
+    }
+    void MenosSpeed()
+    {
+        speed -= 0.02f;
+    }
+    public void sube()
+    {
+        //sube la velocidad con el leap
+        cambio += 2f;
+    }
+    public void baja()
+    {
+        //baja la velocidad con el leap
+        cambio -= 2f;
+    }
+    public void encendido()
+    {
+        audio_Arranque.Play();
+        audio_neutro.PlayDelayed(2f);
+    }
+ 
+    }
+    
+    
+Ya por último haremos lo mismo con el otro botón y pondremos el otro método para bajar o subir la velocidad dependiendo del anterior, estos se ponen como hijos del carro y tú lo organizas a tu preferencia.
+
+[Esto quedaria asi](https://www.youtube.com/watch?v=GXqOuKOLTY0)
+
 ### 5. Montaje.
 
 ### 6. Mecánicas.

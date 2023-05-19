@@ -33009,15 +33009,15 @@ PrefabInstance:
     - target: {fileID: 2757767974685001301, guid: 44deedeecbb171945b3a71e75963228f, type: 3}
       propertyPath: pickup4
       value: 
-      objectReference: {fileID: 753339417}
+      objectReference: {fileID: 496331050}
     - target: {fileID: 2757767974685001301, guid: 44deedeecbb171945b3a71e75963228f, type: 3}
       propertyPath: pickup5
       value: 
-      objectReference: {fileID: 496331050}
+      objectReference: {fileID: 1865606238}
     - target: {fileID: 2757767974685001301, guid: 44deedeecbb171945b3a71e75963228f, type: 3}
       propertyPath: pickup6
       value: 
-      objectReference: {fileID: 1865606238}
+      objectReference: {fileID: 753339417}
     - target: {fileID: 2757767974685001301, guid: 44deedeecbb171945b3a71e75963228f, type: 3}
       propertyPath: receivePort
       value: 6444

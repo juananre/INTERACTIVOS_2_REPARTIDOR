@@ -323,6 +323,8 @@ Luego para la implementación del arduino se modificó el player controller con 
 
 ### 4. Programación con leap.
 
+
+
 ### 5. Montaje.
 
 ### 6. Mecánicas.

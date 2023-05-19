@@ -130,8 +130,33 @@ Lo preimero sera conectar con Unity con el celualar. Para lograr hacer un juego 
     }
 
 
-Este codigo se encarga de cambiar el color de un cubito dependiendo de la información que le llegue, si le llega un “1F” se hará negro y si le llega un “2F” se hará rojo, el codigo debe ponerse en un objeto en blanco y luego este objeto conectarlo a un cubito a través del “public GameObject cube;” 
+Este codigo se encarga de cambiar el color de un cubito dependiendo de la información que le llegue, si le llega un “1F” se hará negro y si le llega un “2F” se hará rojo, el codigo debe ponerse en un objeto en blanco y luego este objeto conectarlo a un cubito a través del 
 
+“public GameObject cube;” 
+
+![cubo](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/7be27e49-8962-4d06-9ec8-86a3f194e31f)
+
+Esto enviándole la información desde una terminal como ScriptCommunicator el cual funciona como Cliente ante el servidor antes mencionado.
+
+Para lograr que el cubo recibiera algo más allá de únicamente órdenes de ponerse en rojo o negro, usamos una aplicación llamada zig zim, con ella le enviamos la información de un array llamado “gravity” para esto modificamos el código, y con esto le pedimos que al recibir valores dentro de ciertos márgenes el cubo se voltease.
+
+para poder enviar esta información requieres conectarte a través de un hotspot (compartiendo datos desde un celular) y luego tomar el IPV4 desde CMD escribiendo  “ ipconfig “ y desactivar el firewall.
+
+![barra de sistemas](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/951e7c5b-c055-487d-809c-0a51851ec7e4)
+
+[Un ejemplo de como deberia quedar](https://www.youtube.com/watch?v=OpWp2a5FJ08)
+
+Ahora que se mueve hicimos un playerController, el cual tiene como función mover el cubo hacia adelante y agregarle un collider, el cual le proporcionó la gravedad al cubo y la posibilidad de colisionar con diferentes objetos del escenario.
+
+[Asi fue como nos quedo](https://www.youtube.com/watch?v=MATfODdEWHo)
+
+Se consiguió un modelo del carro lowpoly en Unity asset store, que no consume muchos recursos ya que probando assets de vehículos realistas consumía demasiado, tuvimos unos problemas breves exportando los modelos a unity pero se logró solucionar para que quedara como debería.
+
+![carrolowpolly](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/725155a7-e4f4-4d4a-8c5d-9d4e00a5c9fa)
+
+Ya con esto funcionando tomamos, el cubo y lo reemplazamos por un asset de un vehículo, y un escenario de una pequeña ciudad, el cual le agregó mucho movimiento, además de hacer posible que el vehículo se pueda encender, apagar, tener 5 cambios diferentes además de acelerar y desacelerar dependiendo de como utilices el botón destinado para ello.
+
+[Y asi fue como nos quedo la implementacion del celular](https://www.youtube.com/watch?v=uHbwmQEYOUw)
 
 ### 3. Programación con Arduino.
 

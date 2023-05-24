@@ -6,14 +6,28 @@
 
 Somos el equipo Triple A y desarrollamos 'LOS REPARTIDORES', una experiencia interactiva para enseñar lo básico de manejar a través de ser un repartidor. Nuestro objetivo es brindar una herramienta educativa para aquellos interesados practicar sus habilidades en manejo. 'LOS REPARTIDORES'.
 
+estos somos nosotros y linkedin:
+
+![nosotros](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/4a45c1b9-e3cc-4b71-8e1b-799bf673cfb0)
+
+![linkedin](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/0f9cac2c-5cc4-4f7e-bd6e-b32f9cebee33)
+
 ## Proceso de diseño
+
+Para este proyecto decidimos hacer la experiencia sobre ser un repartidor porque lo queríamos hacer didáctico cumpliendo con el requisito del master, actuadores y sensores en una experiencia de usuario, no solo sería un juego en computador si no que decidimos hacerlo en un montaje, con pedales, leap motion, sensores en el celular y controles.
+
+Estuvimos divagando con una lluvia de ideas, sobre monstruos y movimiento, pero esta de repartidor nos pareció la más adecuada ya que se le podían implementar varios actuadores y sensores, y la implementación del master podría ser bastante útil para no entorpecer la actividad, que fuera más natural. Al inicio creímos que sería un simulador de conducción pero preferimos gamificarlo para que fuera más divertido y entretenido para los usuarios, metiendole reglas y objetivos para que no se sienta como una pérdida de tiempo o testeo.
+
+Cuando definimos lo que íbamos a hacer empezamos a diseñar el mapa, los pedales y la palanca en Blender (ya que usamos el leap motion reemplazando la palanca). Los assets que usamos los sacamos de Unity assets store y fueron levemente modificados, cuando teníamos montado todo en el mapa del juego diseñamos la palanca en Blender pero tuvimos un problema cuando le hicimos test con el leap motion, no funcionaba muy bien, por lo que cambiamos la palanca por 2 botones, uno que aumenta las marchas y otro las baja.
+
+También definimos que todos los assets que se usarían serían low poly, esto para minimizar los requisitos que pide la aplicación y tener mayor fluidez.
+
 
 ## Tutorial
 
 ### 1. Heramientas a utilizar.
 
 ![logos](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/e7908bfe-baed-4f16-8183-0e1eef522341)
-
 
 Para realizar este proyecto, lo primero que haremos es descargar las herramientas de trabajo. En primer lugar, **Unity**, que es el motor gráfico que utilizamos en la versión 2021.3.8f1 LTS **(puedes elegir la versión que prefieras pero recuerda que sea superior a esta ya que no sabemos si funcuonarian en versiones anterioares)**. A continuación, crearemos un nuevo proyecto, al que llamaremos "Interactivos 2" **(puedes elegir el nombre que desees)**. Para tener un control de versiones, utilizaremos la herramienta GitHub y su extensión GitHub Desktop. Recuerda crear un archivo ".gitattributes" para evitar archivos innecesarios.
 

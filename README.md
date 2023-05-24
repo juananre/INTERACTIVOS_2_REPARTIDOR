@@ -10,7 +10,7 @@ estos somos nosotros y nuestros linkedin:
 
 ![nosotros](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/4a45c1b9-e3cc-4b71-8e1b-799bf673cfb0)
 
-![linkedin](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/0f9cac2c-5cc4-4f7e-bd6e-b32f9cebee33)
+![linkedin](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/2ec51d83-f814-4216-8e79-9940adfc75bd)
 
 ## Proceso de diseño
 

@@ -10,7 +10,7 @@ using System.Runtime.Remoting.Services;
 
 public class PlayerController2 : MonoBehaviour
 {
-    public byte run = 1;
+    public byte run;
     public float cambio = 0f;
     public float speed = 0f;
     private Rigidbody rb;
@@ -18,11 +18,6 @@ public class PlayerController2 : MonoBehaviour
     private bool freno = false;
     private SerialPort _serialPort;
 
-    [Header("Audios")]
-    [SerializeField] AudioSource audio_Arranque;
-    [SerializeField] AudioSource audio_neutro;
-    [SerializeField] AudioSource audio_movimiento;
-    [SerializeField] AudioSource audio_freno;
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -30,6 +25,7 @@ public class PlayerController2 : MonoBehaviour
 
 
     }
+
     private void openSerialPort()
     {
         try
@@ -43,11 +39,10 @@ public class PlayerController2 : MonoBehaviour
             Debug.Log("Open Serial Port");
 
         }
-        catch (Exception e)
-        {
+        catch(Exception e) { 
             Debug.Log(e);
 
-        }
+       }
 
     }
 
@@ -55,13 +50,17 @@ public class PlayerController2 : MonoBehaviour
     {
 
         transform.Translate(Vector3.down * Time.deltaTime * speed);
+
+        
+        if (Input.GetKeyDown(KeyCode.C)) { run = 1; }
+        if (Input.GetKeyDown(KeyCode.V)) { run = 0; }
+
         if (_serialPort.BytesToRead > 0)
         {
             string response = _serialPort.ReadLine();
             if (response == "frenoPressed")
             {
                 freno = true;
-                audio_freno.Play();
                 Debug.Log("frenoPressed");
             }
             if (response == "frenoReleased")
@@ -72,39 +71,19 @@ public class PlayerController2 : MonoBehaviour
             if (response == "accPressed")
             {
                 acelerador = true;
-
+             
             }
             if (response == "accReleased")
             {
                 acelerador = false;
-
-            }
-            if (Input.GetKey(KeyCode.Space))
-            {
-                acelerador = true;
+              
             }
 
-
+          
         }
 
-
-        if (Input.GetKeyDown(KeyCode.C)) 
-        {
-            run = 1;
-            encendido();
-        }
-        if (Input.GetKeyDown(KeyCode.V)) 
-        {
-            run = 0; 
-        }
-        if ((speed < cambio)) 
-        { 
-            MasSpeed(); 
-        } 
-        else 
-        {
-            MenosSpeed(); 
-        }
+        if ((speed < cambio)) { MasSpeed(); } else { MenosSpeed(); }
+        if ((speed > 0)) { Frenar(); }
         if (run == 0) MenosSpeed();
         if (speed <= 0) speed = 0;
         if (cambio <= 0) cambio = 0;
@@ -115,22 +94,13 @@ public class PlayerController2 : MonoBehaviour
     }
     void MasSpeed()
     {
-        if (run == 1)
-        { 
-            if (true == acelerador) 
-            { 
-                speed += 0.02f;
-                audio_neutro.Stop();
-                audio_movimiento.Play();
-            }
-            else 
-            {
-                MenosSpeed();
-                audio_movimiento.Stop();
-                audio_neutro.PlayDelayed(1f);
-            }
-        }
-       
+        // if (run == 1) { if ((Input.GetKey(KeyCode.Space))) { speed += 0.02f; } else { MenosSpeed(); } }
+        if (run == 1) { if (true == acelerador) { speed += 0.02f; } else { MenosSpeed(); } }
+    }
+    
+    void Frenar()
+    {
+        if ( run ==1) { if (true == freno) { speed -= 0.1f; } }
     }
     void MenosSpeed()
     {
@@ -138,18 +108,12 @@ public class PlayerController2 : MonoBehaviour
     }
     public void sube()
     {
-        //sube la velocidad con el leap
+        Debug.Log("si");
         cambio += 2f;
     }
     public void baja()
     {
-        //baja la velocidad con el leap
+        Debug.Log("si");
         cambio -= 2f;
     }
-    public void encendido()
-    {
-        audio_Arranque.Play();
-        audio_neutro.PlayDelayed(2f);
-    }
- 
 }

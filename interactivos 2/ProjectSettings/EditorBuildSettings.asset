@@ -4,17 +4,5 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes:
-  - enabled: 1
-    path: Assets/Scenes/Game/PRINCIPAL.unity
-    guid: 1294daa3c59439849a67c67fc7635bf0
-  - enabled: 1
-    path: Assets/Scenes/Game/game.unity
-    guid: eaee44a69387eed43b1f30e2375bd71b
-  - enabled: 1
-    path: Assets/Scenes/Game/perdiste.unity
-    guid: 577f2a37bf5cefd4280e6af2e4083615
-  - enabled: 1
-    path: Assets/Scenes/Game/ganaste.unity
-    guid: f41a4d0f3cee5004796668c2fd6a9431
+  m_Scenes: []
   m_configObjects: {}

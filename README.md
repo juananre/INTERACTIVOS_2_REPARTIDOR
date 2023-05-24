@@ -6,7 +6,7 @@
 
 Somos el equipo Triple A y desarrollamos 'LOS REPARTIDORES', una experiencia interactiva para enseñar lo básico de manejar a través de ser un repartidor. Nuestro objetivo es brindar una herramienta educativa para aquellos interesados practicar sus habilidades en manejo. 'LOS REPARTIDORES'.
 
-estos somos nosotros y linkedin:
+estos somos nosotros y nuestros linkedin:
 
 ![nosotros](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/4a45c1b9-e3cc-4b71-8e1b-799bf673cfb0)
 

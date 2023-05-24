@@ -540,6 +540,10 @@ Ya con el material listo ahora si iniciamos su construcción, primero usamos de 
 
 ![constru](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/28709455-2c34-4e6f-8f97-610e79256fb1)
 
+En la zona de la plataforma gruesa empezamos a montar lo que sería el asiento, para este se hizo en madera una especie de asiento, que le añadimos espuma y cuerina para que fuera como un asiento normal con varios apoyos para soportar buen tiempo de uso.
+
+La zona de adelante o la más delgada del montaje es donde tenemos los pedales, volante y soporte para el monitor, aquí montamos una pequeña caja donde se pegan los pedales y dentro están los botones con sus conexiones. A la caja le pegamos unas pequeñas columnas de madera para el soporte donde iría el monitor, y a este soporte se le introdujo el volante que tiene un rodillo para que el usuario lo gire sin problemas, y el volante tiene un pequeño soporte para el celular que tiene la función de giroscopio que envía la información a la aplicación.
+
 ### 6. Mecánicas.
 
 Se implementaron los pickups los cuales debes pisar para “entregar todos los paquetes” si logras entregarlos todos antes de que el tiempo termine ganarás. 

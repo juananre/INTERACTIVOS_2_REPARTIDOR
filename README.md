@@ -522,6 +522,24 @@ Ya por último haremos lo mismo con el otro botón y pondremos el otro método p
 
 ### 5. Montaje.
 
+Primero realizamos una pequeña idea basada en simuladores de conduccion caseros como este:
+
+![REFE](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/87182874-2a4d-48f9-bcaf-307adf56e131)
+
+y basado en otras comodidades para los usuarios hicimos unos planos de ideación:
+
+![planos](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/ce7ff42f-31dd-4b67-9977-f84dbbfd7e0a)
+
+Teniendo la idea propuesta, empezamos debatir qué materiales usar como PVC, madera, cartón o plásticos. Al final optamos por madera para que fuera mas economico y resistente, el único inconveniente es que necesitamos mucha herramienta para trabajarla, por suerte uno de los miembros del equipo tiene un pequeño taller para trabajar madera con toda la herramienta necesaria por lo que también fue una de las razones por las que decidimos este material.
+
+Ya teniendo todo definido nos pusimos manos a la obra, el material es todo reciclado de estibas, fuimos a la oficina principal de periódicos El Colombiano y nos llevamos las estibas que ya no cumplian su funcion, para usar ese material , desmontando las estibas una por una. 
+
+![as](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/d957a287-c0ed-4db0-a045-bf4192aaf3ad)
+
+Ya con el material listo ahora si iniciamos su construcción, primero usamos de base 4 vigas de madera juntando por pares, sobre estas 2 placas de madera para tener la plataforma donde estaría casi todo.
+
+![constru](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/28709455-2c34-4e6f-8f97-610e79256fb1)
+
 ### 6. Mecánicas.
 
 Se implementaron los pickups los cuales debes pisar para “entregar todos los paquetes” si logras entregarlos todos antes de que el tiempo termine ganarás. 

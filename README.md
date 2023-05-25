@@ -1002,3 +1002,5 @@ Y viendose la aplicacion en la tableta de esta manera:
 ![app master](https://github.com/juananre/INTERACTIVOS_2_REPARTIDOR/assets/78058130/81312cf8-7767-43b5-b383-fdeacc15a603)
 
 Y listo, tendrás tu juego preparado.
+
+[Tutorial habalado y con gameplay](https://youtu.be/M2qlHxPOjnQ)
